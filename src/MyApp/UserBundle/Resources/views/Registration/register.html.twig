@@ -1,0 +1,16 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "MyAppUserBundle::InscriAdmin.html.twig" %}
+
+{% block formulaire %}
+    <div class="form-login">
+    <h2 class="form-login-heading">Joignez nous !</h2>
+<div class="login-wrap">
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+    {{ form_end(form) }}
+</div>
+    </div>
+{% endblock formulaire %}

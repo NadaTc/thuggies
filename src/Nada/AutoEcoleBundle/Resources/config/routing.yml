@@ -1,0 +1,61 @@
+nada_auto_ecole_homepage:
+    path:     /
+    defaults: { _controller: NadaAutoEcoleBundle:Default:index }
+
+nada_auto_ecole_AgentAccueil:
+    path:     /agentaccueil
+    defaults: { _controller: NadaAutoEcoleBundle:Welcome:Agent }
+nada_auto_ecole_UserAccueil:
+    path:     /useraccueil
+    defaults: { _controller: NadaAutoEcoleBundle:Welcome:User }
+nada_auto_ecole_Accueil:
+    path:     /accueil
+    defaults: { _controller: NadaAutoEcoleBundle:Welcome:Accueil }
+
+
+nada_auto_ecole_Cours:
+    path:     /listcours
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:AfficheCours }
+nada_auto_ecole_SuppCours:
+    path:     /suppCours/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:SuppCours }
+nada_auto_ecole_CoursAdd:
+    path:     /addcours
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:AjoutCours }
+nada_auto_ecole_CoursEdit:
+    path:     /editcours/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:ModifCours }
+
+
+
+nada_auto_ecole_Test:
+    path:     /listtest
+    defaults: { _controller: NadaAutoEcoleBundle:Tests:AfficheTest }
+nada_auto_ecole_TestAdd:
+    path:     /addtest
+    defaults: { _controller: NadaAutoEcoleBundle:Tests:AjoutTests }
+nada_auto_ecole_TestEdit:
+    path:     /edittest/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Tests:ModifTest }
+nada_auto_ecole_SuppTest:
+    path:     /suppTest/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Tests:SuppTest }
+
+
+
+nada_auto_ecole_showQuizTest:
+    path:     /showquiz/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuiz }
+nada_auto_ecole_QuizAdd:
+    path:     /addquiz
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:AjoutQuiz }
+nada_auto_ecole_QuizEdit:
+    path:     /editQuiz/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:ModifQuiz }
+nada_auto_ecole_showQuizTes2t:
+    path:     /showquiz2/{id}/{idt}
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuiz }
+nada_auto_ecole_SuppQuizt:
+    path:     /suppQuiz/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:SuppQuiz }
+
