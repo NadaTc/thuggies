@@ -257,9 +257,9 @@
                                     <tr>
                                         <th><i class="fa fa-bullhorn"></i> Titre</th>
                                         <th class="hidden-phone"><i class="fa fa-question-circle"></i> Contenu</th>
-                                        <th><i class="fa fa-bookmark"></i> Image </th>
 
-                                        <th style="align-content: center"><a href="{{ path('nada_auto_ecole_CoursAdd') }}"> <button class="btn btn-success btn-xs"><i class="fa fa-plus" > </i></button></a></th>
+                                        <th> <i class="fa fa-image"></i>  Image</th>
+                                        <th style="align-content: center"><a href="{{ path('nada_auto_ecole_CoursAdd') }}"> <button class="btn btn-success btn-xs"><i class="fa fa-plus" > </i> Ajout</button></a></th>
                                         <th></th>
                                     </tr>
                                     </thead>
@@ -267,8 +267,9 @@
                                     {% for c in cours %}
                                     <tr>
                                         <td> {{  c.titreCours  }} </td>
-                                        <td class="hidden-phone"> {{ c.contenuCours }}</td>
-                                        <td> {{ c.imageCours }} </td>
+                                        <td class="hidden-phone" >  {{c.contenuCours|length > 100 ? (c.contenuCours[:100] ~ '... Lire la suite') : c.contenuCours }}</td>
+
+                                         <td> <img src=" {{ asset(vich_uploader_asset(c, 'imageFile')) }}" style="width: 200px" /></td>
 
                                         <td>
 
@@ -288,6 +289,9 @@
 
                                     </tbody>
                                 </table>
+                                <div class="navigation text-center">
+                                    {{ knp_pagination_render(cours) }}
+                                </div>
 
 
 

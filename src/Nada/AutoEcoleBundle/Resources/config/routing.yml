@@ -59,3 +59,33 @@ nada_auto_ecole_SuppQuizt:
     path:     /suppQuiz/{id}
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:SuppQuiz }
 
+nada_auto_ecole_Taxi:
+    path:     /taxi
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:Taxi }
+
+nada_auto_ecole_CoursFront:
+    path:     /listcoursFront
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:AfficheCoursFront }
+
+
+nada_auto_ecole_LessonFront:
+    path:     /listLessonFront/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:AfficheLesson }
+nada_auto_ecole_LessonList:
+    path:     /listLesson
+    defaults: { _controller: NadaAutoEcoleBundle:Lesson:AfficheLesson }
+nada_auto_ecole_LessonEdit:
+    path:     /editLesson/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Lesson:ModifLesson }
+nada_auto_ecole_LessonSupp:
+    path:     /suupLesson
+    defaults: { _controller: NadaAutoEcoleBundle:Lesson:SuppLesson }
+nada_auto_ecole_LessonAdd:
+    path:     /addlesson
+    defaults: { _controller: NadaAutoEcoleBundle:Lesson:AjoutLesson }
+
+
+
+
+
+

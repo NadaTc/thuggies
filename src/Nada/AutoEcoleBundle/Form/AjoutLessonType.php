@@ -3,20 +3,19 @@
 namespace Nada\AutoEcoleBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class AjoutCoursType extends AbstractType
+class AjoutLessonType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
 
-            ->add('titreCours')
-            ->add('contenuCours')
+            ->add('name')
+            ->add('text')
 
             ->add('imageFile', VichImageType::class, [
                 'required' => false,])
@@ -28,18 +27,15 @@ class AjoutCoursType extends AbstractType
         ;
     }
 
-
-
     public function configureOptions(OptionsResolver $resolver)
     {
-
         $resolver->setDefaults(array(
-            'data_class' => 'DataBundle\Entity\CoursCode'
+            'data_class' => 'DataBundle\Entity\Lesson'
         ));
     }
 
     public function getBlockPrefix()
     {
-        return 'nada_auto_ecole_bundle_ajout_cours_type';
+        return 'nada_auto_ecole_bundle_ajout_lesson_type';
     }
 }

@@ -1,49 +1,63 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Nada
+ * Date: 02/04/2017
+ * Time: 21:10
+ */
 
 namespace DataBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+
+
 /**
- * CoursCode
+ * Quiz
  *
- * @ORM\Table(name="cours_code")
+ * @ORM\Table(name="Lesson")
  * @ORM\Entity
  * @Vich\Uploadable
  */
-class CoursCode
+class Lesson
 {
+
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_cours", type="integer", nullable=false)
+     * @ORM\Column(name="id_Lesson", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idCours;
+    private $idLesson;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CoursCode")
+     * @ORM\JoinColumn(name="id_cours", referencedColumnName="id_cours")
+     */
+    private $cours;
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titre_cours", type="string", length=50, nullable=false)
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
      */
-    private $titreCours;
+    private $name;
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu_cours", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="text", type="text", length=65535, nullable=false)
      */
-    private $contenuCours;
-
-
+    private $text;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="cours_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="lesson_image", fileNameProperty="imageName", size="imageSize")
      * @Assert\File(maxSize="1200k",mimeTypes={"image/png", "image/jpeg", "image/pjpeg"})
      *
      * @var File
@@ -80,7 +94,7 @@ class CoursCode
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      *
-     * @return CoursCode
+     * @return Lesson
      */
     public function setImageFile(File $image = null)
     {
@@ -106,7 +120,7 @@ class CoursCode
     /**
      * @param string $imageName
      *
-     * @return CoursCode
+     * @return Lesson
      */
     public function setImageName($imageName)
     {
@@ -126,7 +140,7 @@ class CoursCode
     /**
      * @param integer $imageSize
      *
-     * @return CoursCode
+     * @return Lesson
      */
     public function setImageSize($imageSize)
     {
@@ -146,54 +160,68 @@ class CoursCode
     /**
      * @return int
      */
-    public function getIdCours()
+    public function getIdLesson()
     {
-        return $this->idCours;
+        return $this->idLesson;
     }
 
     /**
-     * @param int $idCours
+     * @param int $idLesson
      */
-    public function setIdCours($idCours)
+    public function setIdLesson($idLesson)
     {
-        $this->idCours = $idCours;
+        $this->idLesson = $idLesson;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCours()
+    {
+        return $this->cours;
+    }
+
+    /**
+     * @param mixed $cours
+     */
+    public function setCours($cours)
+    {
+        $this->cours = $cours;
     }
 
     /**
      * @return string
      */
-    public function getTitreCours()
+    public function getName()
     {
-        return $this->titreCours;
+        return $this->name;
     }
 
     /**
-     * @param string $titreCours
+     * @param string $name
      */
-    public function setTitreCours($titreCours)
+    public function setName($name)
     {
-        $this->titreCours = $titreCours;
+        $this->name = $name;
     }
 
     /**
      * @return string
      */
-    public function getContenuCours()
+    public function getText()
     {
-        return $this->contenuCours;
+        return $this->text;
     }
 
     /**
-     * @param string $contenuCours
+     * @param string $text
      */
-    public function setContenuCours($contenuCours)
+    public function setText($text)
     {
-        $this->contenuCours = $contenuCours;
+        $this->text = $text;
     }
-
 
 
 
 
 }
-

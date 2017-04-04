@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ModifCoursType extends AbstractType
 {
@@ -14,7 +15,8 @@ class ModifCoursType extends AbstractType
     { $builder
         ->add('titreCours')
         ->add('contenuCours')
-        ->add('ImageCours', FileType::class, array('data_class'=> null))
+        ->add('imageFile', VichImageType::class, [
+            'required' => false])
 
 
         ->add('Modification',SubmitType::class) ;
@@ -25,7 +27,9 @@ class ModifCoursType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-
+        $resolver->setDefaults(array(
+            'data_class' => 'DataBundle\Entity\CoursCode'
+        ));
     }
 
     public function getBlockPrefix()

@@ -1,20 +1,20 @@
-{% extends "MyAppUserBundle::InscriAdmin.html.twig" %}
+{% extends "MyAppUserBundle:Security:Frontlog.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block formulaire %}
-    <div class="form-login">
-        <div class="login-wrap">
+{% block formLog %}
+
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
     {% endif %}
             <hr>
-            <div class="registration">
+            <div >
 
                 <a class="" href="{{ path('fos_user_security_login') }}">
                     Se connecter
                 </a>
-    </div>
-    </div>
-{% endblock formulaire %}
+            </div>
+
+
+{% endblock formLog %}

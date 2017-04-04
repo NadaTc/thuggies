@@ -75,4 +75,11 @@ class QuizController extends Controller
             array('formModifQuiz'=>$Form->createView())) ;
 
     }
+
+
+    public function TaxiAction() {
+
+       return $this ->render("NadaAutoEcoleBundle:Quiz:taxi.html.twig");
+
+    }
 }

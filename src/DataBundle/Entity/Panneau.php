@@ -11,7 +11,16 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 class Panneau
+
+
 {
+
+    /**
+     *@ORM\ManyToOne(targetEntity="CoursCode")
+     *@ORM\JoinColumn(name="id_cours", referencedColumnName="idCours")
+     */
+    private $cours ;
+
     /**
      * @var string
      *
@@ -48,6 +57,109 @@ class Panneau
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idPanneau;
+
+
+
+
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param string $img
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * @param string $text
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdPanneau()
+    {
+        return $this->idPanneau;
+    }
+
+    /**
+     * @param int $idPanneau
+     */
+    public function setIdPanneau($idPanneau)
+    {
+        $this->idPanneau = $idPanneau;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCours()
+    {
+        return $this->cours;
+    }
+
+    /**
+     * @param mixed $cours
+     */
+    public function setCours($cours)
+    {
+        $this->cours = $cours;
+    }
+
+
+
 
 
 }
