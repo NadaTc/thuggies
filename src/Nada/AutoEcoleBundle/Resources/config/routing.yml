@@ -25,6 +25,9 @@ nada_auto_ecole_CoursAdd:
 nada_auto_ecole_CoursEdit:
     path:     /editcours/{id}
     defaults: { _controller: NadaAutoEcoleBundle:Cours:ModifCours }
+nada_auto_ecole_ShowLessonCours:
+    path:     /showwlessoncours/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Cours:ShowLessonCours }
 
 
 
@@ -42,10 +45,12 @@ nada_auto_ecole_SuppTest:
     defaults: { _controller: NadaAutoEcoleBundle:Tests:SuppTest }
 
 
-
+nada_auto_ecole_quiz:
+    path:     /showAllQuiz
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showAllQuiz }
 nada_auto_ecole_showQuizTest:
     path:     /showquiz/{id}
-    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuiz }
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuizQ }
 nada_auto_ecole_QuizAdd:
     path:     /addquiz
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:AjoutQuiz }
@@ -54,7 +59,7 @@ nada_auto_ecole_QuizEdit:
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:ModifQuiz }
 nada_auto_ecole_showQuizTes2t:
     path:     /showquiz2/{id}/{idt}
-    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuiz }
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuizQ }
 nada_auto_ecole_SuppQuizt:
     path:     /suppQuiz/{id}
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:SuppQuiz }

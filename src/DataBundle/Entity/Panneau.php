@@ -15,11 +15,7 @@ class Panneau
 
 {
 
-    /**
-     *@ORM\ManyToOne(targetEntity="CoursCode")
-     *@ORM\JoinColumn(name="id_cours", referencedColumnName="idCours")
-     */
-    private $cours ;
+
 
     /**
      * @var string
@@ -142,21 +138,6 @@ class Panneau
         $this->idPanneau = $idPanneau;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCours()
-    {
-        return $this->cours;
-    }
-
-    /**
-     * @param mixed $cours
-     */
-    public function setCours($cours)
-    {
-        $this->cours = $cours;
-    }
 
 
 

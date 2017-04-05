@@ -39,6 +39,8 @@ class User extends BaseUser
 
     private $facebookAccessToken;
 
+
+
     /**
      * @return string
      */

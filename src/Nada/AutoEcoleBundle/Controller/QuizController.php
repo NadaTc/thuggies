@@ -15,7 +15,31 @@ class QuizController extends Controller
         return $this->render('', array('name' => $name));
     }
 
-    public function showQuizAction($id)
+    public function showAllQuizAction(Request $request)
+
+
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $qz=$em->getRepository("DataBundle:Quiz")->findAll() ;
+        /**
+         * @var $paginator \knp\Component\Pager\paginator
+         */
+        $paginator = $this->get('knp_paginator');
+
+        $result = $paginator->paginate(
+            $qz,
+            $request->query->getInt('page', 1) /*page number*/,
+            $request->query->getInt('limit', 4) /*limit per page*/
+
+        );
+        return $this->render("NadaAutoEcoleBundle:Quiz:AllQuiz.html.twig", [
+            'qz' => $result,
+        ]);
+
+ }
+
+    public function showQuizQAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
