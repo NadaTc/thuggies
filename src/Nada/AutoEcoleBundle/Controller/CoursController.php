@@ -17,13 +17,14 @@ class CoursController extends Controller
     }
 
 
-    public function ShowLessonCoursAction($id) {
+    public function ShowLessonCoursAction($id)
+    {
 
         $em = $this->getDoctrine()->getManager();
 
-        $lessons=$em->getRepository("DataBundle:Lesson")->findBy(array('cours'=>$id)) ;
+        $lessons = $em->getRepository("DataBundle:Lesson")->findBy(array('cours' => $id));
 
-        return $this->render("NadaAutoEcoleBundle:Cours:ListLessonBack.html.twig", array("lesson" =>$lessons)) ;
+        return $this->render("NadaAutoEcoleBundle:Cours:ListLessonBack.html.twig", array("lesson" => $lessons));
     }
 
     /*   function AfficheCoursFrontAction()
