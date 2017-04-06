@@ -4,24 +4,24 @@
 
  {% block metier %}
      <!--cour 1 -->
-     {% for c in cours  %}
+     {% for t in tests  %}
          <div class="col-md-6 col-sm-12">
 
              <article class="cp-taxi-holder cp-deals-holder">
                  <figure class="cp-thumb">
 
-                     <img src=" {{ asset(vich_uploader_asset(c, 'imageFile')) }}" />
+
 
                  </figure>
                  <div class="cp-text">
-                     <h3>   {{ c.titreCours}}</h3>
+                     <h3>  Niveau : {{ t.niveauTest}}</h3>
                      <ul class="cp-meta-listed">
-                         <li>Niveau de difficulté <span>moyen</span></li>
+                         <li> 5 question </li>
 
                      </ul>
-                     <a href="{{ path('nada_auto_ecole_LessonFront', {'id':c.idCours}) }}" class="cp-btn-style1">Voir les lessons</a>
+                     <a href="#" class="cp-btn-style1"> Passer le test </a>
                  </div>
-                 {{facebookButton() }}
+
              </article>
 
          </div>
@@ -31,6 +31,6 @@
                     {% block paginator %}
 
                         <div class="cp-pagination-row" >
-                            {{ knp_pagination_render(cours) }}
+                            {{ knp_pagination_render(tests) }}
                         </div>
                     {% endblock paginator %}

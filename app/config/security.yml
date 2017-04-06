@@ -25,6 +25,7 @@ security:
 
 
         secured_area:
+
              anonymous: ~
              oauth:
                  resource_owners:
@@ -40,6 +41,7 @@ security:
                      service: my.oauth_aware.user_provider.service
 
     access_control:
+        - { path: ^/login/check-facebook, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }

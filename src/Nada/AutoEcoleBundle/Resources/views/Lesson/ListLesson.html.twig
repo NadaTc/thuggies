@@ -1,4 +1,6 @@
 {% extends "@NadaAutoEcole/BackLayout.html.twig" %}
+
+
 {% block metier %}
 <div class="content-panel">
 
@@ -21,7 +23,7 @@
         {% for l in lesson %}
             <tr>
                 <td> {{ l.name  }} </td>
-                <td class="hidden-phone" >  {{l.text|length > 100 ? (l.text[:100] ~ '... Lire la suite') : l.text }}</td>
+                <td class="hidden-phone" >  {{l.text|length > 50 ? (l.text[:50] ~ '... Lire la suite') : l.text }}</td>
 
                 <td> <img src=" {{ asset(vich_uploader_asset(l, 'imageFile')) }}" style="width: 200px" /></td>
 

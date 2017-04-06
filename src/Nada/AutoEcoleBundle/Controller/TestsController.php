@@ -28,6 +28,35 @@ class TestsController extends Controller
 
     }
 
+    function AfficheTestFrontAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+        $tests = $em->getRepository('DataBundle:Test')->findAll();
+
+
+        /**
+         * @var $paginator \knp\Component\Pager\paginator
+         */
+        $paginator = $this->get('knp_paginator');
+
+        $result = $paginator->paginate(
+            $tests,
+            $request->query->getInt('page', 1) /*page number*/,
+            $request->query->getInt('limit', 4) /*limit per page*/
+
+        );
+
+
+        return $this->render("NadaAutoEcoleBundle:Test:ListTestFront.html.twig", [
+            'tests' => $result,
+        ]);
+    }
+
+
+
+
     public function AjoutTestsAction(Request $request) {
         $ts=new Test() ;
         $Form =$this->createForm(AjoutTestType::class, $ts) ;

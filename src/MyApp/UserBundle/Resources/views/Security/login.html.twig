@@ -24,7 +24,8 @@
 
         <div class="inner-holder">
 
-        Se souvenir de moi <span></span><input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        Se souvenir de moi <span></span>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
 
         <br>
         </div>
@@ -32,9 +33,30 @@
 
 
         <div class="inner-holder">
-            <button class="submit"
-                    type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">
-                  Se Connecter</button>
+            <div class="login-social-link centered">
+
+
+
+                <button class="submit"
+                        type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}">
+                    Se Connecter</button>
+                <br>
+                <br>
+                {% block soc %}
+                    {% for owner in hwi_oauth_resource_owners() %}
+                        {% if owner =='facebook' %}
+                            <a class="btn btn-facebook -{{ owner }} " href="{{ hwi_oauth_login_url(owner) }}">
+                                <i class="fa fa-facebook -{{ owner }}" href="{{ hwi_oauth_login_url(owner) }}">
+                                    {{ owner | trans({}, 'HWIOAuthBundle')|capitalize }}</i>
+                            </a>
+
+                        {% endif %}
+                    {% endfor %}
+                {% endblock soc %}
+
+                <hr>
+            </div>
+
 
         </div>
             <div class="inner-holder">
@@ -48,23 +70,8 @@
 
         </div>
        <hr>
-        <div class="login-social-link centered">
-            <p>Se connecter avec les réseaux sociaux </p>
 
 
-
-            {% block soc %}
-                {% for owner in hwi_oauth_resource_owners() %}
-                    {% if owner =='facebook' %}
-                        <a class="btn btn-facebook -{{ owner }} " href="{{ hwi_oauth_login_url(owner) }}">
-                            <i class="fa fa-facebook -{{ owner }}" href="{{ hwi_oauth_login_url(owner) }}">   {{ owner | trans({}, 'HWIOAuthBundle')|capitalize }}</i>
-                        </a>
-
-                    {% endif %}
-                {% endfor %}
-            {% endblock soc %}
-            <hr>
-        </div>
         <div class="registration">
             Vous n'avez pas encore un compte?<br/>
             <a class="" href="{{ path('fos_user_registration_register') }}">

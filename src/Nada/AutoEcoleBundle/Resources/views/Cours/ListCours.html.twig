@@ -28,9 +28,9 @@
     {% for c in cours %}
         <tr>
             <td> {{  c.titreCours  }} </td>
-            <td class="hidden-phone" >  {{c.contenuCours|length > 100 ? (c.contenuCours[:100] ~ '... Lire la suite') : c.contenuCours }}</td>
+            <td  >  {{c.contenuCours|length > 100 ? (c.contenuCours[:50] ~ '... Lire la suite') : c.contenuCours }}</td>
 
-            <td> <img src=" {{ asset(vich_uploader_asset(c, 'imageFile')) }}" style="width: 200px" /></td>
+            <td style="font-size: large"> <img src=" {{ asset(vich_uploader_asset(c, 'imageFile')) }}" style="width: 200px" /></td>
 
             <td>
                 <a href=" {{ path('nada_auto_ecole_ShowLessonCours', {'id':c.idCours} ) }}"> <button class="btn btn-success btn-xs"  >

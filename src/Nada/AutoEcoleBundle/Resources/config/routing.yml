@@ -43,6 +43,9 @@ nada_auto_ecole_TestEdit:
 nada_auto_ecole_SuppTest:
     path:     /suppTest/{id}
     defaults: { _controller: NadaAutoEcoleBundle:Tests:SuppTest }
+nada_auto_ecole_ListFrontTest:
+    path:     /listfronttest
+    defaults: { _controller: NadaAutoEcoleBundle:Tests:AfficheTestFront }
 
 
 nada_auto_ecole_quiz:
