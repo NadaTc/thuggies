@@ -149,7 +149,7 @@ class CoursController extends Controller
         );
 
         return $this->render("NadaAutoEcoleBundle:Cours:Lesson.html.twig", [
-            'lesson' => $result, 'cours'=>$cours
+            'lesson' => $result, 'cours' => $cours
         ]);
 
     }
