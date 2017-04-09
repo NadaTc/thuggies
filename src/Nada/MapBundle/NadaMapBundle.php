@@ -1,9 +1,9 @@
 <?php
 
-namespace MapBundle;
+namespace Nada\MapBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class MapBundle extends Bundle
+class NadaMapBundle extends Bundle
 {
 }

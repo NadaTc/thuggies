@@ -1,6 +1,6 @@
 <?php
 
-namespace MapBundle\Controller;
+namespace Nada\MapBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,7 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        $name ='name' ;
-        return $this->render('MapBundle:Default:index.html.twig', array('name'=>$name));
+        return $this->render('NadaMapBundle:Default:index.html.twig');
     }
 }

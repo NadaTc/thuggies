@@ -52,6 +52,26 @@ class QuizController extends Controller
     }
 
 
+    public function showQuizFrontQAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $qA=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'idQuiz'=>1)) ;
+        $qB=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'question'=>"Après ce panneau :")) ;
+            $qC=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'al2'=>"Non")) ;
+           $qD=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'idQuiz'=>6)) ;
+        $qE=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'idQuiz'=>7)) ;
+
+
+
+        return $this->render("NadaAutoEcoleBundle:Quiz:passageQuiz.html.twig", ["qA" =>$qA ,'qB'=>$qB, 'qC'=>$qC , 'qD' =>$qD, 'qE'=>$qE] );
+
+
+
+
+    }
+
+
 
     public function AjoutQuizAction(Request $request) {
         $quiz=new Quiz() ;

@@ -5,6 +5,7 @@ imports:
     - { resource: "@MyAppUserBundle/Resources/config/services.yml" }
     - { resource: "@NadaAutoEcoleBundle/Resources/config/services.yml" }
     - { resource: "@DataBundle/Resources/config/services.yml" }
+    - { resource: "@NadaMapBundle/Resources/config/services.yml" }
 
 
 
@@ -25,7 +26,7 @@ framework:
     validation:      { enable_annotations: true }
     #serializer:      { enable_annotations: true }
     templating:
-        engines: ['twig']
+        engines: ['twig', 'php']
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
@@ -87,11 +88,11 @@ fos_user:
 nomaya_social:
     buttons:
         facebook:
-            url:            "www.facebook.com/Nada.tc"
+            url:            "http://www.facebook.com/Thuggies-__CarGo-1461276900599468/"
             locale:         "fr_FR"
             send:           false
             width:          300
-            showFaces:      false
+            showFaces:      true
             layout:         "button_count"
         twitter:
             url:            null
@@ -125,8 +126,9 @@ knp_paginator:
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig                         # sort link template
 hwi_oauth:
     # list of names of the firewalls in which this bundle is active, this setting MUST be set
-    firewall_names: [secured_area]
+    firewall_names: [main]
     connect:
+        confirmation: true
         account_connector: my.custom.user_provider
     fosub:
         username_iterations: 30
@@ -169,7 +171,7 @@ vich_uploader:
             namer:   vich_uploader.namer_origname
         quiz_image:
             uri_prefix:         /images/quiz
-            upload_destination: '%kernel.root_dir%/../web/images/'
+            upload_destination: '%kernel.root_dir%/../web/images/quiz'
             inject_on_load:     true
             delete_on_update:   false
             delete_on_remove:   true

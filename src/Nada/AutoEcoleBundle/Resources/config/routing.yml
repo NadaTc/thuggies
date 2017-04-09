@@ -66,6 +66,9 @@ nada_auto_ecole_showQuizTes2t:
 nada_auto_ecole_SuppQuizt:
     path:     /suppQuiz/{id}
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:SuppQuiz }
+nada_auto_ecole_FrontQuiz:
+    path:     /frontQuiz/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuizFrontQ }
 
 nada_auto_ecole_Taxi:
     path:     /taxi

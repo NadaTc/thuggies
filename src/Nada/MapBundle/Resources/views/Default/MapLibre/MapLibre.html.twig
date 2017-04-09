@@ -1,3 +1,14 @@
+{% extends "NadaMapBundle::BaseLibre.html.twig" %}
+
+
+
+{% block libre %}
+
+
+
+
+
+
 <!doctype html>
 <html>
 
@@ -79,14 +90,7 @@
                             <ul class="navbar-nav">
                                 <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
                                 <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
-                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                                    <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
-                                {% else %}
-                                    <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
-
-
-                                {% endif %}
-
+                                <li><a href="{{ path('nada_auto_ecole_ListFrontTest') }}">Tests</a></li>
                                 <li><a href="#">Voiture</a></li>
                                 <li ><a href="#" >Adresses utiles </a>
                                     <ul class="dropdown-menu" role="menu">
@@ -164,96 +168,12 @@
         <section class="cp-deals-section pd-tb80">
             <div class="container">
                 <div class="cp-heading-style1">
-                    <h2>CarGo -- <span>  {% block title %}Cours {% endblock title %}</span></h2>
+                    <h2>Recherche <span> Libre</span></h2>
                 </div>
                 <div class="row">
 
-                    {% block metier %}
-                        <!--cour 1 -->
-                        {% for c in cours  %}
-                            <div class="col-md-6 col-sm-12">
 
-                                <article class="cp-taxi-holder cp-deals-holder">
-                                    <figure class="cp-thumb">
-
-                                        <img src=" {{ asset(vich_uploader_asset(c, 'imageFile')) }}" />
-
-                                    </figure>
-                                    <div class="cp-text">
-                                        <h3>   {{ c.titreCours}}</h3>
-                                        <ul class="cp-meta-listed">
-                                            <li>Niveau de difficulté <span>moyen</span></li>
-
-                                        </ul>
-                                        <a href="{{ path('nada_auto_ecole_LessonFront', {'id':c.idCours}) }}" class="cp-btn-style1">Voir les lessons</a>
-                                    </div>
-                                    {{facebookButton() }}
-                                </article>
-
-                            </div>
-                        {% endfor %}
-                    {% endblock metier %}
-
-                    {% block paginator %}
-
-
-                    {% endblock paginator %}
-
-                    <!-- les autres cours
-
-
-                    <div class="col-md-6 col-sm-12">
-
-                    <article class="cp-taxi-holder cp-deals-holder">
-                    <figure class="cp-thumb">
-                    <img src="images/deals-thumb-img-02.jpg" alt="">
-                    </figure>
-                    <div class="cp-text">
-                    <h3>Young Drivers</h3>
-                    <ul class="cp-meta-listed">
-                    <li>Mileage: <span>125 000 km</span></li>
-                    <li>Volume capacity: <span>1.42</span></li>
-                    <li>Price: <strong>$25.899</strong></li>
-                    </ul>
-                    <a href="booking.html" class="cp-btn-style1">Book Now</a>
-                    </div>
-                    </article>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-
-                    <article class="cp-taxi-holder cp-deals-holder">
-                    <figure class="cp-thumb">
-                    <img src="images/deals-thumb-img-03.jpg" alt="">
-                    </figure>
-                    <div class="cp-text">
-                    <h3>Registration</h3>
-                    <ul class="cp-meta-listed">
-                    <li>Mileage: <span>141 000 km</span></li>
-                    <li>Volume capacity: <span>1.67</span></li>
-                    <li>Price: <strong>$43.899</strong></li>
-                    </ul>
-                    <a href="booking.html" class="cp-btn-style1">Book Now</a>
-                    </div>
-                    </article>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-
-                    <article class="cp-taxi-holder cp-deals-holder">
-                    <figure class="cp-thumb">
-                    <img src="images/deals-thumb-img-04.jpg" alt="">
-                    </figure>
-                    <div class="cp-text">
-                    <h3>Locatio Finder</h3>
-                    <ul class="cp-meta-listed">
-                    <li>Mileage: <span>155 000 km</span></li>
-                    <li>Volume capacity: <span>1.6l</span></li>
-                    <li>Price: <strong>$32.899</strong></li>
-                    </ul>
-                    <a href="booking.html" class="cp-btn-style1">Book Now</a>
-                    </div>
-                    </article>
-                    </div>
-                    -->
+                    <div id="map" style="width:1300px; height:600px" ></div>
                 </div>
             </div>
         </section>
@@ -425,3 +345,5 @@
 
 <!-- Mirrored from html.crunchpress.com/taxigo/offers.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Mar 2017 14:04:40 GMT -->
 </html>
+
+{% endblock libre %}

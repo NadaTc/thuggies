@@ -1,3 +1,12 @@
-map_homepage:
-    path:     /p
-    defaults: { _controller: MapBundle:Default:index }
+nada_map_homepage:
+    path:     /
+    defaults: { _controller: NadaMapBundle:Default:index }
+nada_map_maplibre:
+    path:     /maplibre
+    defaults: { _controller: NadaMapBundle:Map:MapLibre }
+nada_map_base:
+    path: /guidee
+    defaults: { _controller: NadaMapBundle:Map:MapQuide }
+nada_map_base2:
+    path: /guidee2
+    defaults: { _controller: NadaMapBundle:Map:Marker }

@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Nomaya\SocialBundle\NomayaSocialBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new Nada\MapBundle\NadaMapBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
