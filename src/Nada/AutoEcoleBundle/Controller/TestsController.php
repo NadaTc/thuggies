@@ -33,24 +33,14 @@ class TestsController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
-        $tests = $em->getRepository('DataBundle:Test')->findAll();
+        $testun = $em->getRepository('DataBundle:Test')->findOneBy(array('idTest'=>1));
+        $testdeux = $em->getRepository('DataBundle:Test')->findOneBy(array('idTest'=>2));
 
 
-        /**
-         * @var $paginator \knp\Component\Pager\paginator
-         */
-        $paginator = $this->get('knp_paginator');
-
-        $result = $paginator->paginate(
-            $tests,
-            $request->query->getInt('page', 1) /*page number*/,
-            $request->query->getInt('limit', 4) /*limit per page*/
-
-        );
 
 
         return $this->render("NadaAutoEcoleBundle:Test:ListTestFront.html.twig", [
-            'tests' => $result,
+            'testun' => $testun, 'testdeux'=>$testdeux
         ]);
     }
 

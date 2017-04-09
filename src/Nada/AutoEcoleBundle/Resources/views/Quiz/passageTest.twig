@@ -1,0 +1,288 @@
+
+{% extends "@NadaAutoEcole/FrontLayout.html.twig" %}
+
+{% block title %}
+    Test niveau 1
+    {% endblock %}
+{% block metier %}
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<script language="JavaScript">
+    //<!--  J. Le Montagner 01/10/98
+    var enonce_quest = new Array;
+    var img_quest=new Array ;
+    var nb_eltsform = new Array;
+    var formans = new Array;
+    var commentaire = new Array;
+    var ans = new Array;
+    var done = new Array;
+    var panswer = new Array;
+    var score = 0;
+    var rep = 0;
+    compte3=0;
+
+
+    var nb_elts=5;
+
+
+    var nb_elts_tot=nb_elts
+
+    {
+//question 1
+    enonce_quest [1]= " {{ qA.question}} "
+      img_quest[1] =  " {{ asset(vich_uploader_asset( qA , 'imageFile')) }}  "
+
+    nb_eltsform[1]=2
+
+    formans[1]="  {{ qA.alt1}} "
+    formans[2]="  {{ qA.al2}} "
+    ans[1] = 2;
+    commentaire[1]="  "
+
+        //question 2
+
+        enonce_quest [2]="{{ qB.question}}"
+        img_quest[2] =  " {{ asset(vich_uploader_asset( qB , 'imageFile')) }}  "
+        nb_eltsform[2]=2
+
+        formans[3]=" {{ qB.alt1}}"
+        formans[4]=" {{ qB.al2 }} "
+        ans[2] = 2;
+        commentaire[2]="le"
+
+        //question 3
+        enonce_quest [3]="{{ qC.question}}"
+        img_quest[3] =  " {{ asset(vich_uploader_asset( qC , 'imageFile')) }}  "
+        nb_eltsform[3]=2
+
+        formans[5]=" {{ qC.alt1}}"
+        formans[6]=" {{ qC.al2 }} "
+        ans[3] = 1;
+        commentaire[3]="le"
+         //question 4
+        enonce_quest [4]="{{ qD.question}}"
+        img_quest[4] =  " {{ asset(vich_uploader_asset( qD , 'imageFile')) }}  "
+        nb_eltsform[4]=2
+
+        formans[7]=" {{ qD.alt1}}"
+        formans[8]=" {{ qD.al2 }} "
+        ans[4] = 2;
+        commentaire[4]="le"
+
+        //question5
+        enonce_quest [5]="{{ qE.question}}"
+        img_quest[5] =  " {{ asset(vich_uploader_asset( qE, 'imageFile')) }}  "
+        nb_eltsform[5]=2
+
+        formans[9]=" {{ qE.alt1}}"
+        formans[10]=" {{ qE.al2 }} "
+        ans[5] = 1;
+        commentaire[5]="le"
+
+
+// sauvgarde des réponses
+    function Engine(question, answer) {
+        if (answer != ans[question]) {
+            if (!done[question]) {
+                done[question] = -1;
+                rep++;
+                panswer[question]=answer;
+            }
+            else {
+                done[question] = -1;
+
+                panswer[question]=answer;
+            }
+        }
+        else {
+            if (!done[question]) {
+                done[question] = -1;
+                rep++;
+                panswer[question]=answer;
+            }
+            else {
+                panswer[question]=answer;
+            }
+        }}
+
+        //Comparaison des reponse
+    function NextLevel () {
+
+        score=0;
+        for (var i=1;i<(nb_elts_tot+1);i++){
+            if (panswer[i]==ans[i]){score++;
+            }
+        }
+    }
+
+    // correction et resultat
+    function correction() {
+        if (rep>= nb_elts ) {
+            NextLevel ()
+
+
+            correc=open("","correction","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=1,resizable=1,width=500,height=350");
+            correc.document.write('<BODY TEXT="#000000" BGCOLOR="#FFFFC0" LINK="#0000FF" VLINK="#800080" ALINK="#FF00FF"><b><center>VOS REPONSES!</center><BR><BR>');
+            score=0;
+            for (var i=1;i<(nb_elts_tot+1);i++){
+                correc.document.write('QUESTION <font color="#FF0000"><b><strong>'+i+' : '+panswer[i].toUpperCase()+'</font ></b></strong>');
+                if (panswer[i]==ans[i]){score++;
+                    correc.document.write("  => EXACT<BR>");
+                }
+                else{
+                    correc.document.write("  => FAUX<BR>");
+                }
+            }
+
+
+
+            correc.document.write("    <br>");
+            valid=1;
+            correc.document.write("VOUS AVEZ "+score+" BONNES REPONSES SUR "+nb_elts_tot+"<BR><BR>");
+
+
+            correc.document.write('<b><center>CORRECTION</center><BR><BR></center>');
+
+
+
+            for (var k=1;k<(nb_elts_tot+1);k++){
+
+                correc.document.write(" QUESTION <font color='#FF0000'><b><strong>"+k+" "+enonce_quest[k]+"</font></b></strong>  - la bonne réponse est :<font color='#FF0000'><b><strong>"+ans[k]+"</font></b></strong><br>"+commentaire[k]+"<br><br>");}
+
+            correc.document.write('ATTENTION ! Si vous revenez aux questions précédentes le numéro des bonnes réponses peut changer, leur tirage étant aléatoire.</center><BR></font></b></strong></center></p><br><hr width="75%">');
+
+            correc.document.close();
+
+        }
+        else {
+            alert("REPONDEZ D'ABORD A TOUS LES QCM, SVP !");
+        }  }
+
+        // méthodes des question
+
+           var Tmn = 3;
+		var sc = 0;
+		var tm = '';
+		var mn = Tmn;
+		//Compteur
+		function Go(){
+
+			setTimeout(function(){
+				sc--;
+				if(sc<0){sc=59; mn--;}
+
+				tm=((mn<10)?"0":" ") + mn +":";
+				tm+=((sc<10)?"0":" ") + sc +"";
+				var x = mn/3;
+				if(x<=1 && x>=2/3)
+					$('#time').css('color', 'green');
+				else if(x<=2/3 && x>=1/3)
+					$('#time').css('color', 'orange');
+				else
+					$('#time').css('color', 'red');
+
+				$('#time').val(tm);
+				if(mn == 0 && sc == 0)
+					{alert("Le temps est écoulé ! ") ;
+					window.location.href = "http://localhost/thuggies/web/app_dev.php/frontQuiz/1s";}
+				Go();
+			}, 1000);
+		}
+
+		Go();
+
+    function affich_pag(){
+        var compte=0
+        var compte2=0
+        inumber=3
+        randomnumber = Math.random() ;
+        rand1 = Math.round( (inumber-1) * randomnumber) + 1 ;
+
+        for (var i=1;i<=(nb_elts);i++)
+
+        {document.write( '<hr><img style=\'width: 500px\' src="' + img_quest[i] + '" />' + "<p><font color='#000000'><b><strong>" +i+ " -" +enonce_quest[i]+ "" +
+            " </strong></font></p>" +
+            "</b><font color='#000080'><blockquote>" + "<br><br>"
+               + "<br> <br>");
+
+            compte2=compte
+            trouv=0
+            for (var j=rand1+compte2;j<(nb_eltsform[i]+1+compte2);j++){
+
+                document.write(j-compte2-rand1+1+" - "+formans[j]+"<BR>");compte++;
+                if (ans[i]==j-compte2 && trouv==0){
+                    ans[i]=j-compte2-rand1+1;
+                    trouv=1}
+            }
+            if (rand1>nb_eltsform[i]){
+                for (var j=compte2+1;j<(nb_eltsform[i]+1+compte2);j++){
+
+                    document.write(j-compte2+" - "+formans[j]+"<BR>");compte++;
+                    if (ans[i]==j-compte2 && trouv==0){
+                        ans[i]=j-compte2;
+                        trouv=1}}
+            }
+            else{
+                if (rand1+compte2>compte2+1){for (var j=compte2+1;j<rand1+compte2;j++){
+
+                    document.write(j-compte2+nb_eltsform[i]+1-rand1+" - "+formans[j]+"<BR>")
+                    compte++;
+                    if (trouv==1){ligne=0}
+
+                    if (ans[i]==j-compte2 && trouv==0){
+                        ans[i]=j-compte2+nb_eltsform[i]+1-rand1;trouv=1}
+                }}
+            }
+            document.write('</font><form method="POST"><br><p>Cochez la bonne réponse : </font>')
+            for (var k=1;k<(nb_eltsform[i]+1);k++){document.write(' <input type="radio" name="q"  value="'+k+'"onclick="Engine('+i+',this.value)"><font color="#FF0000"><strong>'+k+'   </strong></font>')
+            }
+            document.write('</p></form></blockquote>')}
+    }}
+    // -->// fin méthode d'affichage des quiz-->
+
+</script>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+</head>
+
+<body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF00FF" style="align-content: center">
+
+<table border="0" cellspacing="0" width="100%">
+<td>
+    <td>
+        <p style="align-content: center">
+       Vous avez :  <p id="chrono">
+		<input type="text" id="time" name="time" readonly="yes" style="font-size:28px; margin:50px; font-weight:bolder; border:0"/>
+	</p>
+            <script>
+                affich_pag()
+            </script> </p>
+            <p id="chrono">
+		<input type="text" id="time" name="time" readonly="yes" style="font-size:28px; margin:50px; font-weight:bolder; border:0"/>
+	</p>
+        <form>
+            <div align="center"><p>
+             <a  class="cp-btn-style1">  <input type="button" style="background-color: Transparent"
+                                                  value=" Résultat !" onclick="correction()"></a>  </p>
+
+                </div>
+        </form>
+
+    </td>
+
+    <tr>
+    <div id="correct "></div>
+
+</tr>
+</table>
+
+<p>&nbsp;</p>
+</body>
+</html>
+
+{% endblock metier %}

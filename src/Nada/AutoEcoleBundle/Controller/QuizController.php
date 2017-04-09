@@ -52,24 +52,36 @@ class QuizController extends Controller
     }
 
 
-    public function showQuizFrontQAction($id)
+    public function niveauIquizAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $qA=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'idQuiz'=>1)) ;
-        $qB=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'question'=>"Après ce panneau :")) ;
-            $qC=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'al2'=>"Non")) ;
-           $qD=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'idQuiz'=>6)) ;
-        $qE=$em->getRepository("DataBundle:Quiz")->findOneBy(array('test'=>$id, 'idQuiz'=>7)) ;
+        $qA = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz' => 1));
+        $qB = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'question' => "Après ce panneau :"));
+        $qC = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'al2' => "Non"));
+        $qD = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz' => 6));
+        $qE = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz' => 7));
 
 
-
-        return $this->render("NadaAutoEcoleBundle:Quiz:passageQuiz.html.twig", ["qA" =>$qA ,'qB'=>$qB, 'qC'=>$qC , 'qD' =>$qD, 'qE'=>$qE] );
-
-
-
-
+        return $this->render("NadaAutoEcoleBundle:Quiz:niveauI.html.twig", ["qA" => $qA, 'qB' => $qB, 'qC' => $qC, 'qD' => $qD, 'qE' => $qE]);
     }
+
+    public function deuxquizAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $qA = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz' => 8));
+        $qB = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz'=>9));
+        $qC = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz'=>10));
+        $qD = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz' => 11));
+        $qE = $em->getRepository("DataBundle:Quiz")->findOneBy(array('test' => $id, 'idQuiz' => 12));
+
+
+        return   $this->render("NadaAutoEcoleBundle:Quiz:deux.html.twig" ,
+            ["qA" => $qA, 'qB' => $qB, 'qC' => $qC, 'qD' => $qD, 'qE' => $qE]);
+    }
+
+
 
 
 

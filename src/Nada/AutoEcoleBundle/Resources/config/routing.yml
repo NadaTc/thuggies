@@ -68,8 +68,10 @@ nada_auto_ecole_SuppQuizt:
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:SuppQuiz }
 nada_auto_ecole_FrontQuiz:
     path:     /frontQuiz/{id}
-    defaults: { _controller: NadaAutoEcoleBundle:Quiz:showQuizFrontQ }
-
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:niveauIquiz }
+nada_auto_ecole_FrontQuizII:
+    path:     /niveauIIfrontQuiz/{id}
+    defaults: { _controller: NadaAutoEcoleBundle:Quiz:deuxquiz }
 nada_auto_ecole_Taxi:
     path:     /taxi
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:Taxi }

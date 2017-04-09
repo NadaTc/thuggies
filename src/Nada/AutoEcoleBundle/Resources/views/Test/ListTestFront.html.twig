@@ -1,10 +1,10 @@
 {% extends "@NadaAutoEcole/FrontLayout.html.twig" %}
 
-{% block title %} Cours {% endblock %}
+{% block title %} Tests {% endblock %}
 
  {% block metier %}
      <!--cour 1 -->
-     {% for t in tests  %}
+
          <div class="col-md-6 col-sm-12">
 
              <article class="cp-taxi-holder cp-deals-holder">
@@ -14,23 +14,36 @@
 
                  </figure>
                  <div class="cp-text">
-                     <h3>  Niveau : {{ t.niveauTest}}</h3>
+                     <h3>  Niveau : {{ testun.niveauTest}}</h3>
                      <ul class="cp-meta-listed">
-                         <li> 5 question </li>
+                         <li> 5 questions </li>
 
                      </ul>
-                     <a href="{{ path('nada_auto_ecole_FrontQuiz', {'id':t.idTest}) }}" class="cp-btn-style1"> Passer le test </a>
+                     <a href="{{ path('nada_auto_ecole_FrontQuiz', {'id':testun.idTest}) }}" class="cp-btn-style1"> Passer le test </a>
                  </div>
 
              </article>
 
          </div>
-     {% endfor %}
+     <div class="col-md-6 col-sm-12">
+
+         <article class="cp-taxi-holder cp-deals-holder">
+             <figure class="cp-thumb">
+
+
+
+             </figure>
+             <div class="cp-text">
+                 <h3>  Niveau : {{ testdeux.niveauTest}}</h3>
+                 <ul class="cp-meta-listed">
+                     <li> 5 questions </li>
+
+                 </ul>
+                 <a href="{{ path('nada_auto_ecole_FrontQuizII', {'id':testdeux.idTest}) }}" class="cp-btn-style1"> Passer le test </a>
+             </div>
+
+         </article>
+
+     </div>
  {% endblock metier %}
 
-                    {% block paginator %}
-
-                        <div class="cp-pagination-row" >
-                            {{ knp_pagination_render(tests) }}
-                        </div>
-                    {% endblock paginator %}

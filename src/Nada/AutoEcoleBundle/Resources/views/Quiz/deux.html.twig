@@ -1,10 +1,10 @@
-
 {% extends "@NadaAutoEcole/FrontLayout.html.twig" %}
 
-{% block title %}
-    Test niveau 1
-    {% endblock %}
+{% block title  %}
+    Test Niveau 2
+    {% endblock title %}
 {% block metier %}
+
 
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
@@ -29,55 +29,62 @@
     var nb_elts_tot=nb_elts
 
     {
+
+
 //question 1
     enonce_quest [1]= " {{ qA.question}} "
       img_quest[1] =  " {{ asset(vich_uploader_asset( qA , 'imageFile')) }}  "
 
-    nb_eltsform[1]=2
+    nb_eltsform[1]=3
 
     formans[1]="  {{ qA.alt1}} "
     formans[2]="  {{ qA.al2}} "
-    ans[1] = 2;
+    formans[3]="  {{ qA.alt3}} "
+    ans[1] = 1;
     commentaire[1]="  "
 
         //question 2
 
         enonce_quest [2]="{{ qB.question}}"
         img_quest[2] =  " {{ asset(vich_uploader_asset( qB , 'imageFile')) }}  "
-        nb_eltsform[2]=2
+        nb_eltsform[2]=3
 
-        formans[3]=" {{ qB.alt1}}"
-        formans[4]=" {{ qB.al2 }} "
-        ans[2] = 2;
-        commentaire[2]="le"
+        formans[4]=" {{ qB.alt1}}"
+        formans[5]=" {{ qB.al2 }} "
+          formans[6]="  {{ qB.alt3}} "
+        ans[2] = 1;
+        commentaire[2]=" "
 
         //question 3
         enonce_quest [3]="{{ qC.question}}"
         img_quest[3] =  " {{ asset(vich_uploader_asset( qC , 'imageFile')) }}  "
-        nb_eltsform[3]=2
+        nb_eltsform[3]=3
 
-        formans[5]=" {{ qC.alt1}}"
-        formans[6]=" {{ qC.al2 }} "
-        ans[3] = 1;
-        commentaire[3]="le"
+        formans[7]=" {{ qC.alt1}}"
+        formans[8]=" {{ qC.al2 }} "
+          formans[9]="  {{ qC.alt3}} "
+        ans[3] = 2;
+        commentaire[3]=" "
          //question 4
         enonce_quest [4]="{{ qD.question}}"
         img_quest[4] =  " {{ asset(vich_uploader_asset( qD , 'imageFile')) }}  "
-        nb_eltsform[4]=2
+        nb_eltsform[4]=3
 
-        formans[7]=" {{ qD.alt1}}"
-        formans[8]=" {{ qD.al2 }} "
-        ans[4] = 2;
-        commentaire[4]="le"
+        formans[10]=" {{ qD.alt1}}"
+        formans[11]=" {{ qD.al2 }} "
+        formans[12]=" {{ qD.alt3 }} "
+        ans[4] = 1;
+        commentaire[4]="l"
 
         //question5
         enonce_quest [5]="{{ qE.question}}"
         img_quest[5] =  " {{ asset(vich_uploader_asset( qE, 'imageFile')) }}  "
-        nb_eltsform[5]=2
+        nb_eltsform[5]=3
 
-        formans[9]=" {{ qE.alt1}}"
-        formans[10]=" {{ qE.al2 }} "
-        ans[5] = 1;
+        formans[13]=" {{ qE.alt1}}"
+        formans[14]=" {{ qE.al2 }} "
+        formans[15]=" {{ qE.alt3 }} "
+        ans[5] = 2;
         commentaire[5]="le"
 
 
@@ -253,7 +260,7 @@
 <body TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#800080" ALINK="#FF00FF" style="align-content: center">
 
 <table border="0" cellspacing="0" width="100%">
-<tr>
+<td>
     <td>
         <p style="align-content: center">
        Vous avez :  <p id="chrono">
@@ -273,7 +280,7 @@
                 </div>
         </form>
 
-    </tr>
+    </td>
 
     <tr>
     <div id="correct "></div>
