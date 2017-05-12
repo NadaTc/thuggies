@@ -1,0 +1,9 @@
+{% extends "FarahChatBundle:Default:layout22.html.twig" %}
+{% block contentAjout %}
+                                        {{ form_start(form) }}
+                                        {{ form_widget(form.categorie) }} <br>
+                                        {{ form_widget(form.titre_discussion) }} <br>
+                                        <br>
+                                        {{ form_widget(form.descriptif) }} <br>
+                                        {{ form_end(form) }}
+{% endblock contentAjout %}

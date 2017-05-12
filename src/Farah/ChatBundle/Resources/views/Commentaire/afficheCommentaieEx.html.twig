@@ -1,0 +1,32 @@
+{% extends "FarahChatBundle:Default:layout.html.twig" %}
+{% block contentAffiche %}
+    {% for c in commentaires %}
+                <div class="panel-body">
+                    <div class="task-content">
+                        <ul id="sortable" class="task-list">
+                            <li class="list-primary">
+                                <i class=" fa fa-ellipsis-v"></i>
+                                <div class="task-checkbox">
+                                    <input type="checkbox" class="list-child" value=""  />
+                                </div>
+                                <div class="task-title">
+                                    {{ c.nomUtilisateur }}
+                                    {{ c.textComdis }} <br>
+                                    {{ c.dateCom |date }}<br>
+                                    {{ socialButtons() }}
+
+
+                                        <button class="btn btn-primary btn-xs fa fa-pencil" href="{{ path('farah_chat_modifierCE', {'id_commentaire': c.idComdis}) }}"></button>
+                                        <button class="btn btn-danger btn-xs fa fa-trash-o" href="{{ path('farah_chat_suppCE', {'id_commentaire':  c.idComdis}) }}"></button>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div><!--/col-md-12 -->
+    </div><!-- /row -->
+{% endfor %}
+{% endblock contentAffiche %}

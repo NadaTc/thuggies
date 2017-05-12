@@ -1,0 +1,46 @@
+<h1 align="center"
+style="color: #0000F0"  > Esprit Parc </h1> <br>
+
+<h1 align="center"
+    style="color: darkmagenta"  > Les voitures / Recherche par Serie DQL </h1> <br>
+
+{{ form(formRech) }}
+{{ form_errors(formRech) }}
+
+<table  border="1" align="center" style="width: 50%">
+
+
+    <table   class="table table-striped"  style="width:300px; height:100px;">
+
+
+        <thead>
+        <th>id</th>
+        <th >Série</th>
+        <th>Marque</th>
+        <th>modele</th>
+        <th>carburant</th>
+        <th>nb_ch </th>
+        <th>Mise en circulation</th>
+        <th>pplace</th>
+
+        <thead/>
+
+        {% for voiture in voitures %}
+
+            <tr>
+
+                <td> {{ voiture.idVoiture }} </td>
+                <td> {{ voiture.immatricule }} </td>
+                <td> {{ voiture.marque }} </td>
+                <td> {{ voiture.modele }} </td>
+                <td> {{ voiture.typecarburant }} </td>
+                <td> {{ voiture.nbcheveaux }}  </td>
+                <td> {{ voiture.datemarche |date("m/d/Y") }} </td>
+                <td> {{ voiture.nbrPlace }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+<br>

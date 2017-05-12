@@ -59,6 +59,102 @@ class Reparer
      */
     private $idVoiture;
 
+    /**
+     * @return int
+     */
+    public function getIdReparation()
+    {
+        return $this->idReparation;
+    }
+
+    /**
+     * @param int $idReparation
+     */
+    public function setIdReparation($idReparation)
+    {
+        $this->idReparation = $idReparation;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypePanne()
+    {
+        return $this->typePanne;
+    }
+
+    /**
+     * @param string $typePanne
+     */
+    public function setTypePanne($typePanne)
+    {
+        $this->typePanne = $typePanne;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPieceChangee()
+    {
+        return $this->pieceChangee;
+    }
+
+    /**
+     * @param string $pieceChangee
+     */
+    public function setPieceChangee($pieceChangee)
+    {
+        $this->pieceChangee = $pieceChangee;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return \Voiture
+     */
+    public function getIdVoiture()
+    {
+        return $this->idVoiture;
+    }
+
+    /**
+     * @param \Voiture $idVoiture
+     */
+    public function setIdVoiture($idVoiture)
+    {
+        $this->idVoiture = $idVoiture;
+    }
+
 
 }
 

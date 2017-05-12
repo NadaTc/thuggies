@@ -1,0 +1,36 @@
+{% extends "FarahChatBundle:Default:layout22.html.twig" %}
+
+
+{% block content %}
+
+{% for d in discussions %}
+    <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="faq-tab1">
+        <ul class="cp-faq-listed">
+            <li>
+                <div class="cp-faq-box">
+
+                        <div class="cp-top">
+                        <h4>{{ d.categorie }}</h4>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="cp-bottom">
+    <ul>
+
+<li><h5>{{ d.titreDiscussion }}</h5></li><br>
+<li><h5>{{ d.descriptif }}</h5></li><br>
+        <img src=" {{ asset(vich_uploader_asset(d, 'imageFile')) }}" />
+<li><h6>{{ d.dateDisc |date }}</h6></li>
+       <li> <h5>  {{ d.nomUtilisateur }}</h5></li>
+<a href="{{  path('farah_chat_modifierD', {  'id_discussion': d.idDiscussion }) }}" class="cp-btn-style1">Modifier </a>
+<a href="{{  path('farah_chat_supp', {  'id_discussion': d.idDiscussion }) }}" class="cp-btn-style1">Supprimer </a>
+<a href="{{  path('farah_chat_afficheCom', {  'id_dis': d.idDiscussion }) }}" class="cp-btn-style1">Afficher commentaire</a><br>
+        {{ socialButtons() }}
+    </ul>
+    </div>
+    </div>
+    {% endfor %}
+{% endblock content %}

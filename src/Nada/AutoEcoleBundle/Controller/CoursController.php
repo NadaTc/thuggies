@@ -6,7 +6,6 @@ use DataBundle\Entity\CoursCode;
 use Nada\AutoEcoleBundle\Form\AjoutCoursType;
 use Nada\AutoEcoleBundle\Form\ModifCoursType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Templating\Helper\Helper;
 use Symfony\Component\HttpFoundation\Request;
 
 class CoursController extends Controller
@@ -51,7 +50,7 @@ class CoursController extends Controller
         $result = $paginator->paginate(
             $cours,
             $request->query->getInt('page', 1) /*page number*/,
-            $request->query->getInt('limit', 6) /*limit per page*/
+            $request->query->getInt('limit', 4) /*limit per page*/
 
         );
 
@@ -94,6 +93,7 @@ class CoursController extends Controller
 
         return $this->redirectToRoute("nada_auto_ecole_Cours");
     }
+
 
     public function AjoutCoursAction(Request $request)
     {
@@ -138,6 +138,7 @@ class CoursController extends Controller
 
         $cours = $em->getRepository("DataBundle:CoursCode")->findAll();
         $lesson = $em->getRepository('DataBundle:Lesson')->findBy(array('cours' => $id));
+        $plus =$em->getRepository("DataBundle:CoursCode")->findBy(array('nbvote'=> 5) ) ;
         /**
          * @var $paginator \knp\Component\Pager\paginator
          */
@@ -150,7 +151,7 @@ class CoursController extends Controller
         );
 
         return $this->render("NadaAutoEcoleBundle:Cours:Lesson.html.twig", [
-            'lesson' => $result, 'cours' => $cours
+            'lesson' => $result, 'cours' => $cours, 'plus'=>$plus
         ]);
 
     }

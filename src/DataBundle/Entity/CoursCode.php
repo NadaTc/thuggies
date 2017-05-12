@@ -51,7 +51,7 @@ class CoursCode
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      *
      * @var string
      */
@@ -65,11 +65,15 @@ class CoursCode
     private $imageSize;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime",nullable=true)
      *
      * @var \DateTime
      */
     private $updatedAt;
+    /**
+     * @ORM\Column(name="nb_vote", type="integer", nullable=true)
+     */
+    private $nbvote ;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -189,6 +193,22 @@ class CoursCode
     public function setContenuCours($contenuCours)
     {
         $this->contenuCours = $contenuCours;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbvote()
+    {
+        return $this->nbvote;
+    }
+
+    /**
+     * @param mixed $nbvote
+     */
+    public function setNbvote($nbvote)
+    {
+        $this->nbvote = $nbvote;
     }
 
 

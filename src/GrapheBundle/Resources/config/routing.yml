@@ -1,0 +1,9 @@
+graphe_homepage:
+    path:     /
+    defaults: { _controller: GrapheBundle:Default:index }
+Stat_voiture:
+        path:     /histo
+        defaults: { _controller: GrapheBundle:Graphe:chartHistogramme }
+Stat_voiture2:
+        path:     /pie
+        defaults: { _controller: GrapheBundle:Graphe:chartPie }

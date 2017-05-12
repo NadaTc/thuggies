@@ -45,6 +45,70 @@ class Vignette
      */
     private $idVoiture;
 
+    /**
+     * @return int
+     */
+    public function getIdVi()
+    {
+        return $this->idVi;
+    }
+
+    /**
+     * @param int $idVi
+     */
+    public function setIdVi($idVi)
+    {
+        $this->idVi = $idVi;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return int
+     */
+    public function getValeur()
+    {
+        return $this->valeur;
+    }
+
+    /**
+     * @param int $valeur
+     */
+    public function setValeur($valeur)
+    {
+        $this->valeur = $valeur;
+    }
+
+    /**
+     * @return \Voiture
+     */
+    public function getIdVoiture()
+    {
+        return $this->idVoiture;
+    }
+
+    /**
+     * @param \Voiture $idVoiture
+     */
+    public function setIdVoiture($idVoiture)
+    {
+        $this->idVoiture = $idVoiture;
+    }
+
 
 }
 

@@ -1,3 +1,105 @@
 data_homepage:
     path:     /
     defaults: { _controller: DataBundle:Default:index }
+data_offre:
+    resource: "@DataBundle/Resources/config/routing/offre.yml"
+    prefix:   /offre
+User_ajout_voiture:
+    path:     /add
+    defaults: { _controller: DataBundle:Voiture:AjoutV }
+User_affiche_voiture:
+    path:     /see
+    defaults: { _controller: DataBundle:Voiture:AfficheV }
+User_delete_voiture:
+    path:     /del/{id}
+    defaults: { _controller: DataBundle:Voiture:deleteV }
+User_update_voiture:
+    path:     /update/{id}
+    defaults: { _controller: DataBundle:Voiture:updateV }
+User_ajout_assurance:
+        path:     /afficheassurance/{id}
+        defaults: { _controller: DataBundle:Carnet:AfficheA }
+User_ajt_assurance:
+        path:     /assurance
+        defaults: { _controller: DataBundle:Carnet:AjoutA }
+User_consulte_vignette:
+        path:     /affichevignette/{id}
+        defaults: { _controller: DataBundle:Carnet:Affiche_Vignette }
+User_ajout_vignette:
+        path:     /vignette
+        defaults: { _controller: DataBundle:Carnet:Ajout_vignette }
+User_consulte_visite_tech:
+        path:     /affichevisite/{id}
+        defaults: { _controller: DataBundle:Carnet:Affiche_Visite_tech }
+User_ajout_visit_tech:
+        path:     /visite
+        defaults: { _controller: DataBundle:Carnet:Ajout_visite_tech }
+User_consulte_vidange:
+        path:     /affichevidange/{id}
+        defaults: { _controller: DataBundle:Carnet:Affiche_Vidange }
+User_ajout_vidange:
+        path:     /vidange
+        defaults: { _controller: DataBundle:Carnet:Ajout_vidange }
+User_consulte_rapraton:
+        path:     /afficherep/{id}
+        defaults: { _controller: DataBundle:Carnet:Affiche_Reparation }
+User_ajout_rep:
+        path:     /reppp
+        defaults: { _controller: DataBundle:Carnet:Ajout_reparation }
+
+User_vidange_ajout_max:
+        path:     /vidangemax
+        defaults: { _controller: DataBundle:Carnet:Ajout_vidange_test}
+
+
+Admin_Update_vidange:
+        path:     /adminvidangeupdate/{id}
+        defaults: { _controller: DataBundle:Carnet:update_admin_vidange}
+Admin_gestion_vidange:
+        path:     /adminvidange
+        defaults: { _controller: DataBundle:Carnet:Affiche_admin_vidange}
+Admin_delete_vidange:
+        path:     /adminvidangedelete/{id}
+        defaults: { _controller: DataBundle:Carnet:delete_admin_vidange}
+
+
+Admin_gestion_assurance:
+        path:     /adminassurance
+        defaults: { _controller: DataBundle:Carnet:Affiche_admin_assurance}
+Admin_Update_assurance:
+        path:     /adminassuranceupdate/{id}
+        defaults: { _controller: DataBundle:Carnet:update_admin_Assurance}
+Admin_delete_assurance:
+        path:     /adminassuranceedelete/{id}
+        defaults: { _controller: DataBundle:Carnet:delete_admin_assurance}
+
+Admin_ajout_max:
+        path:     /ajoutMax
+        defaults: { _controller: DataBundle:Carnet:Ajout_vidange_test}
+
+Admin_Update_max:
+        path:     /afficheMax/{id}
+        defaults: { _controller: DataBundle:Carnet:AfficheMax}
+
+Admin_gestion_offre:
+        path:     /adminoffre
+        defaults: { _controller: DataBundle:Offre_Admin:index}
+
+Admin_consulte_offre:
+        path:     /adminoffre/{idOffre}
+        defaults: { _controller: DataBundle:Offre_Admin:show}
+
+Admin_add_offre:
+        path:     /adminoffreadd
+        defaults: { _controller: DataBundle:Offre_Admin:new}
+
+Admin_edite_offre:
+        path:     /admineditoffre/{idOffre}
+        defaults: { _controller: DataBundle:Offre_Admin:edit}
+
+Admin_delete_offre:
+        path:     /adminaoffreedelete/{idOffre}
+        defaults: { _controller: DataBundle:Offre_Admin:delete}
+Admin_search_car:
+        path:     /search
+        defaults: { _controller: DataBundle:Voiture:RechSerieDQL}

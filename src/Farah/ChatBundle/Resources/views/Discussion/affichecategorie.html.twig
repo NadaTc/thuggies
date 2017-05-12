@@ -1,0 +1,21 @@
+{% extends "FarahChatBundle:Default:layout22.html.twig" %}
+
+
+{% block afficheCa %}
+
+    {% for d in discussions %}
+        <h3>Les Categories Des Pannes</h3>
+        <ul class="cp-listed">
+            <li><a href="{{ path('farah_chat_afficheDate') }}">1. Toutes Les Categories</a></li>
+            <li><a href="{{ path('farah_chat_affichePanneM') }}">2. Panne Mecanique</a></li>
+            <li><a href="{{ path('farah_chat_affichePanneE') }}">3. Panne Electrique</a></li>
+            <li><a href="{{ path('farah_chat_afficheToPe') }}">4. Tolier Et Peinture</a></li>
+            <li><a href="{{ path('farah_chat_afficheCPneu') }}">5. Changement De Pneu</a></li>
+            <li><a href="{{ path('farah_chat_affichePanneT') }}">6. Panne Tapissier</a></li>
+            <li><a href="{{ path('farah_chat_affichePanneR') }}">7. Panne Radiateur</a></li>
+            <li><a href="{{ path('farah_chat_afficheMG') }}">8. Mecanique Generale</a></li>
+            <li><a href="{{ path('farah_chat_afficheAutre') }}">9. Autres</a></li>
+        </ul></div>
+        </div>
+{% endfor %}
+{% endblock afficheCa %}

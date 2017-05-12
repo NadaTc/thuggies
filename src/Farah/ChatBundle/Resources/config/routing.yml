@@ -1,0 +1,146 @@
+farah_chat_homepage:
+    path:     /
+    defaults: { _controller: FarahChatBundle:Default:index }
+
+farah_chat_afficheD:
+    path:     /afficheD
+    defaults: { _controller: FarahChatBundle:Discussion:afficherD}
+
+farah_chat_modifierD:
+    path:     /modifierD/{id_discussion}
+    defaults: { _controller: FarahChatBundle:Discussion:Modifier}
+
+farah_chat_supp:
+    path:     /supp/{id_discussion}
+    defaults: { _controller: FarahChatBundle:Discussion:Supp }
+
+farah_chat_afficheDate:
+    path:     /afficheDate
+    defaults: { _controller: FarahChatBundle:Discussion:afficherDate}
+
+farah_chat_afficheDE:
+    path:     /afficheDE
+    defaults: { _controller: FarahChatBundle:Discussion:afficherDiscEx}
+
+farah_chat_ajoutA:
+    path:     /ajoutA
+    defaults: { _controller: FarahChatBundle:Discussion:Ajout}
+
+farah_chat_suppDE:
+    path:     /suppDE/{id_discussion}
+    defaults: { _controller: FarahChatBundle:Discussion:SuppDE }
+
+
+
+
+
+farah_chat_affichePanneM:
+    path:     /affichePM
+    defaults: { _controller: FarahChatBundle:Discussion:panneM}
+
+farah_chat_afficheAutre:
+    path:     /afficheAutres
+    defaults: { _controller: FarahChatBundle:Discussion:Autre}
+
+farah_chat_afficheCPneu:
+    path:     /afficheCPneu
+    defaults: { _controller: FarahChatBundle:Discussion:CPneu}
+
+farah_chat_afficheMG:
+    path:     /afficheMG
+    defaults: { _controller: FarahChatBundle:Discussion:Mg}
+
+farah_chat_affichePanneE:
+    path:     /affichePE
+    defaults: { _controller: FarahChatBundle:Discussion:PanneE}
+
+farah_chat_affichePanneR:
+    path:     /affichePR
+    defaults: { _controller: FarahChatBundle:Discussion:PanneR}
+
+farah_chat_affichePanneT:
+    path:     /affichePT
+    defaults: { _controller: FarahChatBundle:Discussion:PanneT}
+
+farah_chat_afficheToPe:
+    path:     /afficheToPe
+    defaults: { _controller: FarahChatBundle:Discussion:ToPe}
+
+
+
+
+farah_chat_afficheTitre:
+    path:     /afficheTitre/{key}
+    defaults: { _controller: FarahChatBundle:Discussion:Titre}
+
+_graphePie:
+    path: /chartPie
+    defaults: { _controller: FarahChatBundle:Graphe:chartPie}
+
+
+
+
+
+
+farah_chat_afficheC:
+    path:     /afficheC
+    defaults: { _controller: FarahChatBundle:Commentaire:afficherAll}
+
+farah_chat_afficheCom:
+    path:     /afficheCom/{id_dis}
+    defaults: { _controller: FarahChatBundle:Commentaire:afficherCom}
+
+farah_chat_afficheComEx:
+    path:     /afficheComEx/{id_dis}
+    defaults: { _controller: FarahChatBundle:Commentaire:afficherComEx}
+
+farah_chat_ajoutC:
+    path:     /ajoutC/{id_dis}
+    defaults: { _controller: FarahChatBundle:Commentaire:Ajout1}
+
+farah_chat_ajoutCE:
+    path:     /ajoutCE/{id_dis}
+    defaults: { _controller: FarahChatBundle:Commentaire:AjoutComEx}
+
+
+farah_chat_modifierC:
+    path:     /modifierC/{id_commentaire}
+    defaults: { _controller: FarahChatBundle:Commentaire:ModifierC}
+
+
+farah_chat_modifierCE:
+    path:     /modifierCE/{id_commentaire}
+    defaults: { _controller: FarahChatBundle:Commentaire:ModifierComEx}
+
+farah_chat_suppC:
+    path:     /suppC/{id_commentaire}
+    defaults: { _controller: FarahChatBundle:Commentaire:Supp}
+
+
+farah_chat_suppCE:
+    path:     /suppC/{id_commentaire}
+    defaults: { _controller: FarahChatBundle:Commentaire:SuppComEx}
+
+
+
+
+farah_chat_chat:
+    path: /chat
+    defaults: { _controller: FarahChatBundle:Chat:index}
+
+
+farah_chat_chatEx:
+    path: /chatEx
+    defaults: { _controller: FarahChatBundle:Chat:indexEx}
+
+
+
+
+farah_chat_mail:
+    path: /mail
+    defaults: { _controller: FarahChatBundle:Mail:contact}
+
+
+farah_chat_mailAgent:
+    path: /mailAgent
+    defaults: { _controller: FarahChatBundle:Email:contact }

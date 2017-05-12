@@ -1,0 +1,331 @@
+
+<html>
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block stylesheet %}
+            <title>{% block title %}Espace Discussion{% endblock %}</title>
+
+            <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
+
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+
+            <link rel="stylesheet" href="{{ asset('css/theme-color.css') }}" type="text/css">
+
+            <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css">
+
+            <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css">
+
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+
+            <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}" type="text/css">
+
+            <link href='{{ asset('https://fonts.googleapis.com/css?family=Exo+2:400,300,600,700,900,800,200,100,500,400italic') }}' rel='stylesheet' type='text/css'>
+
+
+
+        {% endblock %}
+    {% endblock %}
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <header class="cp_header">
+
+        <div id="cp-slide-search" class="cp_side-search">
+            <form method="get">
+                <input type="text" placeholder="Enter Your Name..." required>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+
+        <!-- iciiiiiiiiiiiiiii -->
+
+        <div class="cp-navigation-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="cp-topbar">
+                            <ul class="top-listed">
+                                <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+                                <li><a href="{{ path('fos_user_registration_register') }}">Joignez nous</a></li>
+
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            FR
+                                            <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">fr</a></li>
+                                            <li><a href="#">en</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <span class="tp-num">Appelez nous +216 53 75 38 37 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-6">
+
+                        <strong class="cp-logo">
+                            <a href="index.html"></a>
+                        </strong>
+                    </div>
+                    <div class="col-md-9 col-sm-12 col-xs-6">
+
+                        <div class="cp-nav-holder">
+                            <ul class="navbar-nav">
+                                <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
+                                <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
+                                {% else %}
+                                    <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
+
+
+                                {% endif %}
+
+                                <li ><a href="#" >Adresses utiles </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
+                                        <li><a href="{{ path('nada_map_maplibre') }}">Recherche libre</a></li>
+
+                                    </ul>
+                                </li>
+
+
+
+                                <li class="dropdown"><a href="{{ path('User_affiche_voiture') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gestion Des Voitures <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_affiche_voiture') }}">Liste des voitures </a></li>
+                                        <li><a href="{{ path('User_ajout_voiture') }}">Ajouter une Voiture</a></li>
+                                    </ul>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Carnet <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_ajout_vidange') }}">Ajouter VIdange</a></li>
+                                        <li><a href="{{ path('User_ajt_assurance') }}">Ajouter Assurance</a></li>
+                                        <li><a href="{{ path('User_ajout_vignette') }}">Ajouter Vignette</a></li>
+
+                                        <li><a href="{{ path('User_ajout_rep') }}">Ajouter Reparation</a></li>
+                                    </ul>
+
+
+                                <li><a href="{{ path('offre_index') }}">Offre </a></li>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez-nous<i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('farah_chat_afficheDate') }}">Contact Expert-Auto</a></li>
+                                        <li><a href="{{ path('farah_chat_mail') }}">Contact Agent-AutoEcole</a></li>
+                                        <li><a href="{{ path('farah_chat_chat') }}">Chat</a></li>
+                                    </ul>
+                            </ul>
+
+
+                            <ul class="nav-right-listed">
+                                <li id="search-push"><i class="fa fa-search"></i></li>
+                                <li id="push" class="cp-sidemenu"><a href="#"><i class="fa fa-align-justify"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="cp_inner-banner">
+        <img src="{{ asset('images/banner/inner-banner-img-05.jpg') }}" alt="">
+
+        <div class="cp-inner-banner-holder">
+            <div class="container">
+                <h2>Contacter Expert-Auto</h2>
+
+
+            </div>
+        </div>
+        <div class="animate-bus">
+            <img src="{{ asset('images/animate-bus2.png') }}" alt="">
+        </div>
+    </div>
+{% block chat %}
+    <div id="cp-main-content">
+
+        <section class="cp-faq-section pd-tb80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class="cp-faq-holder">
+                            <h3>POSER UNE QUESTION?</h3>
+
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="{{ path('farah_chat_ajoutA') }}" aria-controls="ask-tab1" role="tab" data-toggle="tab">Ajouter Discussion</a></li>
+                                <li><a href="#ask-tab2" aria-controls="" role="tab" data-toggle="tab">Rechercher Discussion</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="ask-tab1">
+
+                                    <div class="cp-ask-tab-inner">
+                                        <p>Trouvez la réponse à votre question en utilisant la discussion. Poser votre question:</p>
+                                        {% block contentAjout %}
+                                        <form method="get">
+
+                                            <a href="{{ path('farah_chat_ajoutA') }}" class="cp-btn-style2">Ajouter Discussion</a>
+                                        </form>
+                                        {% endblock contentAjout %}
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade in" id="ask-tab2">
+                                    <div class="cp-ask-tab-inner">
+                                        <p>Trouvez la discussion  Tapez simplement une lettre de titre: </p>
+                                        <form method="get">
+                                            <input type="text" name="titre">
+                                            <a href="" class="cp-btn-style2">Rechecher Maintenant</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% block afficheCa %}
+    <div class="col-md-5">
+        <aside class="cp_sidebar-outer">
+            <div class="widget widget-recent-post">
+                <div class="cp-faq-holder">
+
+                            <h3>Les Categories Des Pannes</h3>
+                            <ul class="cp-listed">
+                                <li><a href="{{ path('farah_chat_afficheDate') }}">1. Toutes Les Categories</a></li>
+                                <li><a href="{{ path('farah_chat_affichePanneM') }}">2. Panne Mecanique</a></li>
+                                <li><a href="{{ path('farah_chat_affichePanneE') }}">3. Panne Electrique</a></li>
+                                <li><a href="{{ path('farah_chat_afficheToPe') }}">4. Tolier Et Peinture</a></li>
+                                <li><a href="{{ path('farah_chat_afficheCPneu') }}">5. Changement De Pneu</a></li>
+                                <li><a href="{{ path('farah_chat_affichePanneT') }}">6. Panne Tapissier</a></li>
+                                <li><a href="{{ path('farah_chat_affichePanneR') }}">7. Panne Radiateur</a></li>
+                                <li><a href="{{ path('farah_chat_afficheMG') }}">8. Mecanique Generale</a></li>
+                                <li><a href="{{ path('farah_chat_afficheAutre') }}">9. Autres</a></li>
+                            </ul>
+
+                </div>
+                        </div>
+                                </aside>
+                    </div>
+                    <div id="cp-main-content">
+                        <section class="cp-faq-section pd-tb80">
+                            <div class="container">
+                                <div class="cp-faq-heading">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="{{ path('farah_chat_afficheDate') }}" aria-controls="faq-tab1" role="tab" data-toggle="tab"> Recent Discussions</a></li>
+                                {% block content %}
+                                {% endblock content %}
+                                {% endblock afficheCa %}
+                            </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                        <div class="cp-pagination-row">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        Prev
+                                    </a>
+                                </li>
+                                <li><a href="active">1</a></li>
+                                <li class=""><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        Next
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div class="cp-faq-btn-holder pd-t80">
+                            <strong>Vous-avez des problemes? Contactez-nous maintenant</strong>
+                            <a href="contact.html" class="cp-btn-style1">Contactez-nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <footer class="cp_footer">
+        <section class="cp-ft-top-section pd-t80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="footer-about-box">
+                            <strong class="logo">
+                                <a href="index.html"><img src="{{ asset('images/cp-logo2.png') }}" alt=""></a>
+                            </strong>
+                           <ul class="cp-social-links">
+                                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#"><i class="fa  fa-envelope"></i></a></li>
+                            </ul>
+                            <ul class="cp-logo-listed">
+                                <li><a href="#"><img src="{{ asset('images/company-logo1.jpg') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('images/company-logo2.jpg') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('images/company-logo3.jpg') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('images/company-logo4.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cp-ft-bottom-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+
+                        <p> All Rights Reserved 2016 </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+</div>
+{% endblock chat %}
+<script type="text/javascript" src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('js/html5shiv.js') }}" type="text/javascript"></script>
+
+<script type="text/javascript" src="{{ asset('js/migrate.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/custom-script.js') }}"></script>
+</body>
+</html>

@@ -10,3 +10,6 @@ nada_map_base:
 nada_map_base2:
     path: /guidee2
     defaults: { _controller: NadaMapBundle:Map:Marker }
+nada_codename:
+    path: /codename
+    defaults: { _controller: NadaMapBundle:Map:Codename }

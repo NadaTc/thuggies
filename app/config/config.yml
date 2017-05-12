@@ -6,6 +6,8 @@ imports:
     - { resource: "@NadaAutoEcoleBundle/Resources/config/services.yml" }
     - { resource: "@DataBundle/Resources/config/services.yml" }
     - { resource: "@NadaMapBundle/Resources/config/services.yml" }
+    - { resource: "@GrapheBundle/Resources/config/services.yml" }
+    - { resource: "@FarahChatBundle/Resources/config/services.yml" }
 
 
 
@@ -88,7 +90,7 @@ fos_user:
 nomaya_social:
     buttons:
         facebook:
-            url:            "http://www.facebook.com/Thuggies-__CarGo-1461276900599468/"
+            url:            "https://web.facebook.com/Thuggies-__CarGo-1461276900599468"
             locale:         "fr_FR"
             send:           false
             width:          300
@@ -162,7 +164,7 @@ vich_uploader:
             delete_on_update:   false
             delete_on_remove:   true
             namer:   vich_uploader.namer_origname
-        leeson_image:
+        lesson_image:
             uri_prefix:         /images/lesson
             upload_destination: '%kernel.root_dir%/../web/images/lesson'
             inject_on_load:     true
@@ -176,3 +178,6 @@ vich_uploader:
             delete_on_update:   false
             delete_on_remove:   true
             namer:   vich_uploader.namer_origname
+        product_image:
+            uri_prefix:         /images/products
+            upload_destination: 'C:/wamp/www/image'

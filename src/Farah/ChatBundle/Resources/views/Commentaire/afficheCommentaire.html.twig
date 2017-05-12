@@ -1,0 +1,29 @@
+{% extends "FarahChatBundle:Default:layout22.html.twig" %}
+{% block content %}
+    {% for c in commentaires %}
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="faq-tab1">
+                <ul class="cp-faq-listed">
+                    <li>
+                        <div class="cp-faq-box">
+                            <div class="cp-top">
+                                <h4>{{ c.nomUtilisateur }}</h4>
+                                <h5>{{ c.textComdis }}</h5>
+                                <h6>{{ c.dateCom|date }}</h6>
+                                {{ socialButtons() }}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cp-bottom">
+                <ul>
+                    <li><h5></h5></li><br>
+                    <a href="{{  path('farah_chat_modifierC', {  'id_commentaire': c.idComdis }) }}" class="cp-btn-style1">Modifier </a>
+                    <a href="{{  path('farah_chat_suppC', {  'id_commentaire': c.idComdis }) }}" class="cp-btn-style1">Supprimer </a>
+                    <a href="" class="cp-btn-style1">Ajouter un commentaire</a>
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from html.crunchpress.com/taxigo/offers.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Mar 2017 14:04:33 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TaxiGo Responsive Template</title>
+
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/theme-color.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,600,700,900,800,200,100,500,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div id="wrapper">
+
+    <header class="cp_header">
+
+        <div id="cp-slide-search" class="cp_side-search">
+            <form method="get">
+                <input type="text" placeholder="Enter Your Name..." required>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+
+        <!-- iciiiiiiiiiiiiiii -->
+
+        <div class="cp-navigation-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="cp-topbar">
+                            <ul class="top-listed">
+
+                                <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            FR
+                                            <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">fr</a></li>
+                                            <li><a href="#">en</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <span class="tp-num">Appelez nous +216 53 75 38 37 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-6">
+
+                        <strong class="cp-logo">
+                            <a href="index.html"></a>
+                        </strong>
+                    </div>
+                    <div class="col-md-9 col-sm-12 col-xs-6">
+
+                        <div class="cp-nav-holder">
+                            <ul class="navbar-nav">
+                                <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
+                                <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
+                                <li><a href="offers.html">Tests</a></li>
+                                <li ><a href="#" >Adresses utiles </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="faq.html">Recherche guidée</a></li>
+                                        <li><a href="faq-sidebar.html">Recherche libre</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="{{ path('offre_index') }}">Offre </a></li>
+
+                                <li class="dropdown"><a href="{{ path('User_affiche_voiture') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gestion Des Voitures <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_affiche_voiture') }}">Liste des voitures </a></li>
+                                        <li><a href="blog-sidebar.html">Ajouter une Voiture</a></li>
+                                    </ul>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Carnet <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="blog.html">Ajouter VIdange</a></li>
+                                        <li><a href="blog-sidebar.html">Ajouter Assurance</a></li>
+                                        <li><a href="blog-sidebar.html">Ajouter Vignette</a></li>
+                                        <li><a href="blog-sidebar.html">Ajouter Vidange</a></li>
+                                        <li><a href="blog-sidebar.html">Ajouter Reparation</a></li>
+                                    </ul>
+
+                                    <!--
+                                    <li><a href="booking.html">View a booking</a>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-sidebar.html">Blog with Sidebar</a></li>
+                                            <li><a href="blog-detail.html">Blog Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Gallery</a>
+                                                <ul>
+                                                    <li><a href="gallery.html">Our Gallery</a></li>
+                                                    <li><a href="gallery-2.html">Gallery 2 Col</a></li>
+                                                    <li><a href="gallery-3.html">Gallery 3 Col</a></li>
+                                                    <li><a href="gallery-full.html">Gallery Full Width</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="testimonial.html">Testimonial</a></li>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="reservation.html">Reservation</a></li>
+                                        </ul>
+                                    </li>
+                                     -->
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez nous<i class="fa fa-angle-down"></i></a>
+
+                                </li>
+                            </ul>
+                            <ul class="nav-right-listed">
+                                <li id="search-push"><i class="fa fa-search"></i></li>
+                                <li id="push" class="cp-sidemenu"><a href="#"><i class="fa fa-align-justify"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+    <div class="cp_inner-banner">
+        <img src="{{ asset('images/banner/inner-banner-img-02.jpg') }}" alt="">
+
+        <div class="cp-inner-banner-holder">
+            <div class="container">
+
+
+
+            </div>
+        </div>
+        <div class="animate-bus">
+            <img src="{{ asset('images/car3.png') }}" alt="">
+        </div>
+    </div>
+
+    <div id="cp-main-content">
+
+
+
+        <section class="cp-deals-section pd-tb80">
+            <div class="container">
+                <div class="cp-heading-style1">
+                    <h2>Nos <span>Offres</span></h2>
+                </div>
+                <div class="row">
+
+{% block body %}
+
+
+    <table>
+
+        <tbody>
+        {% for offre in offres %}
+
+            <div class="col-md-6 col-sm-12">
+
+                <article class="cp-taxi-holder cp-deals-holder">
+                    <figure class="cp-thumb">
+
+                        <img height="120" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="{{ 'http://localhost/Image/' ~ offre.imageName}}">
+
+                    </figure>
+                    <div class="cp-text">
+                        <h3>   {{ offre.titre}}</h3>
+                        <ul class="cp-meta-listed">
+                            <li>Marque <span>{{ offre.marque }}</span></li>
+
+                        </ul>
+                        <a href="{{ path('offre_show', { 'idOffre': offre.idOffre }) }}" class="cp-btn-style1">Consulter l'offre</a>
+                    </div>
+                    {{facebookButton() }}
+                </article>
+            </div>
+        {% endfor %}
+                {% block pagination %}
+
+                    <div class="navigation text-center">
+                        {{ knp_pagination_render(offres) }}
+                    </div>
+                {% endblock %}
+
+
+
+
+            {#
+                  <tr>
+                <td><a href="{{ path('offre_show', { 'idOffre': offre.idOffre }) }}">{{ offre.idOffre }}</a></td>
+                <td>{{ offre.titre }}</td>
+                <td><img height="120" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="{{ 'http://localhost/Image/' ~ offre.imageName}}"></td>
+                <td>{{ offre.marque }}</td>
+                <td>{{ offre.modele }}</td>
+                <td>{{ offre.prix }}</td>
+                <td>{% if offre.dateOffre %}{{ offre.dateOffre|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ offre.descriptif }}</td>
+                <td>{{ offre.location }}</td>
+                <td>{{ offre.numeroDeTel }}</td>
+                <td>{{ offre.idVoiture }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('offre_show', { 'idOffre': offre.idOffre }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('offre_edit', { 'idOffre': offre.idOffre }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('offre_new') }}">Create a new offre</a>
+        </li>
+    </ul>
+            #}
+
+
+{% endblock %}
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cp-testimonial-section pd-tb80">
+            <div class="container">
+                <div class="cp-heading-style2">
+                    <h2>aaaaaaaaaaaaaa <span>aaaaaaaaaaaa</span></h2>
+                </div>
+                <div class="owl-carousel" id="cp-testimonial-slider">
+                    <div class="item">
+                        <div class="cp-testimonial-inner">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="cp-text">
+                                        <strong>hahahahahah</strong>
+                                        <blockquote class="cp-blockquote">
+                                            paragraaaaaaaaaphe
+                                        </blockquote>
+                                        <span>moulehaaa</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+<span class="cp-icon">
+<i class="fa fa-user"></i>
+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cp-testimonial-inner">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="cp-text">
+                                        <strong>titre 2</strong>
+                                        <blockquote class="cp-blockquote">
+                                            paaaaaaaraaaaaaaaagraaaaaaaaaphe 22
+                                        </blockquote>
+                                        <span>moula parag 2</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+<span class="cp-icon">
+<i class="fa fa-user"></i>
+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cp-testimonial-inner">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8">
+                                    <div class="cp-text">
+                                        <strong>titre 3</strong>
+                                        <blockquote class="cp-blockquote">
+                                            parag 3
+                                        </blockquote>
+                                        <span>moula 3</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+<span class="cp-icon">
+<i class="fa fa-user"></i>
+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="cp_footer">
+
+        <!--  <section class="cp-ft-top-section pd-t80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="footer-about-box">
+                            <strong class="logo">
+                                <a href="index.html"><img src="{{ asset('images/cp-logo2.png') }}" alt=""></a>
+                            </strong>
+                            <p>The Company downminor offences are fine and will not incur any additional fee's. Any other offences should be checked with our reservations urna nibh ut, our reservations alias consequatur aut perferendis doloribus asurna etiam libero nisl, in magna feugia.</p>
+                            <ul class="cp-social-links">
+                                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li><a href="#"><i class="fa  fa-envelope"></i></a></li>
+                            </ul>
+                            <ul class="cp-logo-listed">
+                                <li><a href="#"><img src="{{ asset('images/company-logo1.jpg') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('images/company-logo2.jpg') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('images/company-logo3.jpg') }}" alt=""></a></li>
+                                <li><a href="#"><img src="{{ asset('images/company-logo4.jpg') }}" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="cp-ft-bottom-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+
+                        <div class="cp-ft-form-box">
+                            <h4>Déja inscrit? <a href="{{ path('fos_user_security_login') }}"> Se connecter maintenant !</a></h4>
+                            <form action="{{ path("fos_user_security_check") }}" method="post">
+                                <div class="inner-holder">
+                                    <input type="text" placeholder="Nom d'utilisateur"  required="required">
+                                </div>
+                                <div class="inner-holder">
+
+
+                                    <input type="password" placeholder="Mot de passe"
+                                           id="password" name="_password" required="required" />
+                                </div>
+                                <div class="inner-holder inner-holder2">
+                                    <button type="submit" class="btn-submit" value="Submit">Se connecter</button>
+                                </div>
+                                <label> <input type="checkbox">   </label>
+                                <label><a href="{{ path('fos_user_resetting_request') }}" class="remember-pw" >Mot de passe oublié ?</a></label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+
+                        <nav class="cp-footer-nav">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="offers.html">Online Offers</a></li>
+                                <li><a href="faq.html">FAQs</a></li>
+                                <li><a href="booking.html">View a booking</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                        <p> All Rights Reserved 2016 </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </footer>
+</div>
+
+<script type="text/javascript" src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+<script src="js/html5shiv.js" type="{{ asset('text/javascript') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/migrate.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/custom-script.js') }}"></script>
+</body>
+
+<!-- Mirrored from html.crunchpress.com/taxigo/offers.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Mar 2017 14:04:40 GMT -->
+</html>

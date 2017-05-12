@@ -190,7 +190,7 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
 
-                <p class="centered"><a href="profile.html"><img src="{{ asset('assets/img/Capture.PNG') }}" class="img-circle" width="60"></a></p>
+                <p class="centered"><a href="profile.html"><img src="{{ asset('assets/img/doudi.jpg') }}" class="img-circle" width="60"></a></p>
                 <h5 class="centered">{{ app.user.username }} </h5>
 
                 <li class="mt">
@@ -221,8 +221,16 @@
                     <ul class="sub">
                         <li><a  href="{{ path('nada_auto_ecole_Test') }}">liste des tests</a></li>
                         <li><a  href="{{ path('nada_auto_ecole_TestAdd') }}">nouveau tets </a></li>
-                        li><a  href="{{ path('nada_auto_ecole_quiz') }}">liste des questions </a></li>
+                        <li><a  href="{{ path('nada_auto_ecole_quiz') }}">liste des questions </a></li>
                     </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="{{ path('farah_chat_mailAgent') }}" >
+                        <i class="fa fa-check-square"></i>
+                        <span>Chat </span>
+                    </a>
+
                 </li>
 
             </ul>
@@ -644,7 +652,7 @@
             // (string | mandatory) the text inside the notification
             text: 'Ajoutez vos cours et vos tests',
             // (string | optional) the image to display on the left
-            image: '{{ asset('assets/img/Capture.PNG') }}',
+            image: '{{ asset('assets/img/doudi.jpg') }}',
             // (bool | optional) if you want it to fade out on its own or just sit there
             sticky: true,
             // (int | optional) the time you want it to be alive for before fading out

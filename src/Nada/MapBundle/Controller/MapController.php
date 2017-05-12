@@ -18,9 +18,10 @@ class MapController extends Controller
     public  function  MapQuideAction()
     {           $em = $this->getDoctrine()->getManager();
         $places = $em->getRepository("DataBundle:Places")->findAll();
+        $kiosq =$em->getRepository("DataBundlePlaces")->findOneBy(array('place'=>'Kiosque Agile')) ;
 
         return $this->render("NadaMapBundle::BaseGuidee.html.twig",
-            array("places" => $places) );}
+        ["places" => $places, 'kiosq'=>$kiosq ]);}
 
     public  function  MarkerAction()
     {           $em = $this->getDoctrine()->getManager();
@@ -28,4 +29,9 @@ class MapController extends Controller
 
         return $this->render("NadaMapBundle:Default/MapLibre:MapGuidee.html.twig",
             array("places" => $places) );}
+
+            public function CodenameAction(){
+
+                return $this->render("NadaMapBundle:Default/MapLibre:codename.html.twig");}
+
 }

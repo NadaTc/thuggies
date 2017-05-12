@@ -1,0 +1,33 @@
+{% extends "FarahChatBundle:Default:layout.html.twig" %}
+{% block contentAffiche %}
+  {% for d in discussions %}
+                        <div class="panel-body">
+                            <div class="task-content">
+                                <ul id="sortable" class="task-list">
+                                    <li class="list-primary">
+                                        <i class=" fa fa-ellipsis-v"></i>
+                                        <div class="task-checkbox">
+                                            <input type="checkbox" class="list-child" value=""  />
+                                        </div>
+                                       <h4> {{ d.categorie }} </h4>
+                                        <h5> {{ d.nomUtilisateur }}</h5>
+                                            {{ d.titreDiscussion }} <br>
+                                        <img src=" {{ asset(vich_uploader_asset(d, 'imageFile')) }}" /><br>
+                                             {{ d.descriptif }} <br>
+
+                                            {{ d.dateDisc |date }} <br>
+                                        {{ socialButtons() }}
+
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+
+                            <div class=" add-task-row">
+                                <a class="btn btn-success btn-sm pull-left" href="{{ path('farah_chat_ajoutCE' ,{ 'id_dis':d.idDiscussion }) }}"  >Ajouter un commentaire</a> <br>
+                                <a class="btn btn-default btn-sm pull-right" href="{{  path('farah_chat_afficheComEx', {  'id_dis': d.idDiscussion }) }}"  >Afficher les commentaires</a>
+                            </div>
+                        {% endfor %} <br>
+
+
+{% endblock contentAffiche %}

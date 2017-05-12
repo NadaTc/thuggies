@@ -117,42 +117,45 @@
     }
 
     // correction et resultat
-    function correction() {
+ function correction() {
         if (rep>= nb_elts ) {
             NextLevel ()
 
 
-            correc=open("","correction","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=1,resizable=1,width=500,height=350");
-            correc.document.write('<BODY TEXT="#000000" BGCOLOR="#FFFFC0" LINK="#0000FF" VLINK="#800080" ALINK="#FF00FF"><b><center>VOS REPONSES!</center><BR><BR>');
+            document.write('<b><center>VOS REPONSES!</center><BR><BR>');
             score=0;
             for (var i=1;i<(nb_elts_tot+1);i++){
-                correc.document.write('QUESTION <font color="#FF0000"><b><strong>'+i+' : '+panswer[i].toUpperCase()+'</font ></b></strong>');
+            document.write('QUESTION <font color="#FF0000"><b><strong>'+i+' : '+panswer[i].toUpperCase()+'</font ></b></strong>');
                 if (panswer[i]==ans[i]){score++;
-                    correc.document.write("  => EXACT<BR>");
+              document.write("  => EXACTE<BR>");
                 }
                 else{
-                    correc.document.write("  => FAUX<BR>");
+                    document.write("  => FAUX<BR>");
                 }
             }
 
 
 
-            correc.document.write("    <br>");
+            document.write("    <br>");
             valid=1;
-            correc.document.write("VOUS AVEZ "+score+" BONNES REPONSES SUR "+nb_elts_tot+"<BR><BR>");
+            document.write("VOUS AVEZ "+score+" BONNES REPONSES SUR "+nb_elts_tot+"<BR><BR>");
 
 
-            correc.document.write('<b><center>CORRECTION</center><BR><BR></center>');
+          document.write('<b><center>CORRECTION</center><BR><BR>');
 
 
 
             for (var k=1;k<(nb_elts_tot+1);k++){
 
-                correc.document.write(" QUESTION <font color='#FF0000'><b><strong>"+k+" "+enonce_quest[k]+"</font></b></strong>  - la bonne réponse est :<font color='#FF0000'><b><strong>"+ans[k]+"</font></b></strong><br>"+commentaire[k]+"<br><br>");}
+              document.write(" QUESTION <font color='#FF0000'><b><strong>"+k+" "+enonce_quest[k]+"</font></b></strong>  - la bonne réponse est :<b style='color: #F08080'><strong>"+ans[k]+"</b></strong><br>"+commentaire[k]+"<br><br>");}
 
-            correc.document.write('ATTENTION ! Si vous revenez aux questions précédentes le numéro des bonnes réponses peut changer, leur tirage étant aléatoire.</center><BR></font></b></strong></center></p><br><hr width="75%">');
+            document.write('ATTENTION ! Si vous revenez aux questions précédentes le numéro des bonnes réponses peut changer, leur tirage étant aléatoire.</center><BR></font></b></strong></center></p><br><hr width="75%">');
+      if (score >= 4) {
+               document.write('Vous pouvez passez le Test deux : <div align="center"><p><a class="btn btn-theme04" href="{{path('nada_auto_ecole_FrontQuizII', {'id':2}) }}">  <input style="background-color:#F08080 " type="button" value=" Test niveau 2 ! " ></a></p></div>');
+            }
+            document.write('<div align="center"><p><a class="btn btn-theme04" href="{{path('nada_auto_ecole_Taxi') }}">  <input style="background-color:#F08080 " type="button" value=" Accueil" ></a></p></div><div align="center"><p><a  class="cp-btn-style1" href="{{path('nada_auto_ecole_ListFrontTest') }}">  <input type="button" style="background-color:#F08080 " value=" Liste des Tests " ></a></p></div> ') ;
 
-            correc.document.close();
+
 
         }
         else {
@@ -161,7 +164,7 @@
 
         // méthodes des question
 
-           var Tmn = 3;
+        var Tmn = 3;
 		var sc = 0;
 		var tm = '';
 		var mn = Tmn;

@@ -73,7 +73,7 @@
                     <div class="col-md-3 col-sm-12 col-xs-6">
 
                         <strong class="cp-logo">
-                            <a href="index.html"></a>
+                            <a href="#"></a>
                         </strong>
                     </div>
                     <div class="col-md-9 col-sm-12 col-xs-6">
@@ -82,11 +82,19 @@
                             <ul class="navbar-nav">
                                 <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
                                 <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
-                                <li><a href="offers.html">Tests</a></li>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
+                                {% else %}
+                                    <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
+
+
+                                {% endif %}
+
+                                <li><a href="#">Voiture</a></li>
                                 <li ><a href="#" >Adresses utiles </a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="faq.html">Recherche guidée</a></li>
-                                        <li><a href="faq-sidebar.html">Recherche libre</a></li>
+                                        <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
+                                        <li><a href="{{ path('nada_map_maplibre') }}">Recherche libre</a></li>
 
                                     </ul>
                                 </li>
@@ -169,7 +177,7 @@
                                 <div class="cp-top">
                                     <div class="date-box">
                                         19
-                                        <span>January</span>
+                                        <span>Janvier</span>
                                     </div>
                                     <h3>{{ l.name }}</h3>
                                 </div>
@@ -206,7 +214,7 @@
                                 <h4>Autres cours</h4>
                                 <ul>
                                     {% for c in cours %}
-                                    <li>{{ c.titreCours }} <span>Moyen</span></li>
+                                    <li>{{ c.titreCours }} <span><a href="{{ path('nada_auto_ecole_LessonFront', {'id':c.idCours}) }}"> Visiter</a>  </span></li>
 {% endfor %}
                                     <li><a href="#" class="readmore">Plus de cours_</a></li>
                                 </ul>
@@ -215,19 +223,24 @@
                             <div class="widget widget-popular">
                                 <h4>les plus lus</h4>
                                 <ul>
-
+                                    {% for p in plus %}
                                     <li>
                                         <div class="cp-popular-holder">
-                                            <div class="cp-thumb"><img src="{{ asset('images/popular-sm-01.jpg') }}" alt=""></div>
+                                            <h5>{{  p.titreCours }} </h5>
+                                            <div class="cp-thumb"><img src="{{ asset(vich_uploader_asset(p, 'imageFile'))}}" style="size: 20px"></div>
                                             <div class="cp-text">
-                                                <h5>cours populairs </h5>
+
+
+
                                                 <ul class="listed">
-                                                    <li></li>
-                                                    <li></li>
+
+
+
                                                 </ul>
                                             </div>
                                         </div>
                                     </li>
+                                    {% endfor %}
 
 
                                     <li><a href="#" class="readmore">voir plus </a></li>
@@ -237,7 +250,8 @@
                             <div class="widget widget-flickr">
                                 <h4>images</h4>
                                 <ul>
-                                    <li><div class="cp-thumb"><a href="#"> <img src="{{ asset('images/flickr-img-01.jpg') }}" alt=""></a></div></li>
+                                    <li><div class="cp-thumb"><a href="#"> <img src="{{ asset('images/cours/58e0fb7254e1c_car3.png') }}" alt=""></a></div></li>
+                                    <li><div class="cp-thumb"><a href="#"> <img src="{{ asset('images/cours/58e17a0300b45_cats.png') }}" alt=""></a></div></li>
 
                                 </ul>
                             </div>
@@ -253,37 +267,8 @@
 
     <footer class="cp_footer">
 
-        <!--  <section class="cp-ft-top-section pd-t80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="footer-about-box">
-                            <strong class="logo">
-                                <a href="index.html"><img src="{{ asset('images/cp-logo2.png') }}" alt=""></a>
-                            </strong>
-                            <p>The Company downminor offences are fine and will not incur any additional fee's. Any other offences should be checked with our reservations urna nibh ut, our reservations alias consequatur aut perferendis doloribus asurna etiam libero nisl, in magna feugia.</p>
-                            <ul class="cp-social-links">
-                                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa  fa-envelope"></i></a></li>
-                            </ul>
-                            <ul class="cp-logo-listed">
-                                <li><a href="#"><img src="{{ asset('images/company-logo1.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo2.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo3.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo4.jpg') }}" alt=""></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+
+
 
         <section class="cp-ft-bottom-section">
             <div class="container">
@@ -314,13 +299,23 @@
 
                         <nav class="cp-footer-nav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="offers.html">Online Offers</a></li>
-                                <li><a href="faq.html">FAQs</a></li>
-                                <li><a href="booking.html">View a booking</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
+                                <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
+                                {% else %}
+                                    <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
+
+
+                                {% endif %}
+
+                                <li><a href="#">Voiture</a></li>
+                                <li ><a href="#" >Adresses utiles </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
+                                        <li><a href="{{ path('nada_map_maplibre') }}">Recherche libre</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                         <p> All Rights Reserved 2016 </p>

@@ -1,0 +1,24 @@
+offre_index:
+    path:     /
+    defaults: { _controller: "DataBundle:Offre:index" }
+    methods:  GET
+
+offre_show:
+    path:     /{idOffre}/show
+    defaults: { _controller: "DataBundle:Offre:show" }
+    methods:  GET
+
+offre_new:
+    path:     /new
+    defaults: { _controller: "DataBundle:Offre:new" }
+    methods:  [GET, POST]
+
+offre_edit:
+    path:     /{idOffre}/edit
+    defaults: { _controller: "DataBundle:Offre:edit" }
+    methods:  [GET, POST]
+
+offre_delete:
+    path:     /{idOffre}/delete
+    defaults: { _controller: "DataBundle:Offre:delete" }
+    methods:  DELETE

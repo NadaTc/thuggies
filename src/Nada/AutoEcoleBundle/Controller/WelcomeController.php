@@ -15,4 +15,5 @@ class WelcomeController extends Controller
 
     public function UserAction() { return $this->render("NadaAutoEcoleBundle:Welcome:HomeUser.html.twig");}
     public function AccueilAction() { return $this->render("NadaAutoEcoleBundle:Welcome:Home.html.twig");}
+    public function ExpertAction() { return $this->render("NadaAutoEcoleBundle:Welcome:ExpertHome.html.twig");}
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Marker animations with <code>setTimeout()</code></title>
+    <title>CarGo --</title>
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -36,7 +36,8 @@
 <body>
 {% block map %}
 <div id="floating-panel">
-    <button id="drop" onclick="drop()"> Consulter adresses </button>
+    <button id="drop" onclick="drop()"> Service des mines </button>
+    <button id="drop" onclick=" findKiosq ()"> kiosque </button>
 </div>
 
 
@@ -52,6 +53,8 @@
         {% for p in places %}
         {lat: {{ p.lang}} ,lng :{{ p.lat }} } , {% endfor %} ] ;
 
+    var kiosqTab =[
+        {lat: 36.8665135 ,lng : 10.2201139 }  ] ;
 
     var markers = [];
     var map;
@@ -59,7 +62,7 @@
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
-            center: {lat: 52.520, lng: 13.410}
+            center: {lat: 36.898392, lng:10.1875433 }
         });
     }
 
@@ -70,12 +73,28 @@
         }
     }
 
+    function findKiosq () {
+        clearMarkers();
+        for (var i = 0; i < kiosqTab.length; i++) {
+            addMarkerWithTimeout(kiosq[i], i * 200);
+        }
+    }
+
     function addMarkerWithTimeout(position, timeout) {
         window.setTimeout(function() {
             markers.push(new google.maps.Marker({
                 position: position,
                 map: map,
                 animation: google.maps.Animation.DROP
+            }));
+        }, timeout);
+    }
+    function addMarkerWithTimeoutKiosq(position, timeout) {
+        window.setTimeout(function() {
+            markers.push(new google.maps.Marker({
+                position: position,
+                map: map,
+                animation: google.maps.Animation.FINDKIOSQ
             }));
         }, timeout);
     }

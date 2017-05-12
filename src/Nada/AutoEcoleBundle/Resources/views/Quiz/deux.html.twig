@@ -123,8 +123,49 @@
         }
     }
 
-    // correction et resultat
     function correction() {
+        if (rep>= nb_elts ) {
+            NextLevel ()
+
+
+            document.write('<b><center>VOS REPONSES!</center><BR><BR>');
+            score=0;
+            for (var i=1;i<(nb_elts_tot+1);i++){
+            document.write('QUESTION <font color="#FF0000"><b><strong>'+i+' : '+panswer[i].toUpperCase()+'</font ></b></strong>');
+                if (panswer[i]==ans[i]){score++;
+              document.write("  => EXACTE<BR>");
+                }
+                else{
+                    document.write("  => FAUX<BR>");
+                }
+            }
+
+
+
+            document.write("    <br>");
+            valid=1;
+            document.write("VOUS AVEZ "+score+" BONNES REPONSES SUR "+nb_elts_tot+"<BR><BR>");
+
+
+          document.write('<b><center>CORRECTION</center><BR><BR>');
+
+
+
+            for (var k=1;k<(nb_elts_tot+1);k++){
+
+              document.write(" QUESTION <font color='#FF0000'><b><strong>"+k+" "+enonce_quest[k]+"</font></b></strong>  - la bonne réponse est :<b style='color: #F08080'><strong>"+ans[k]+"</b></strong><br>"+commentaire[k]+"<br><br>");}
+
+            document.write('ATTENTION ! Si vous revenez aux questions précédentes le numéro des bonnes réponses peut changer, leur tirage étant aléatoire.</center><BR></font></b></strong></center></p><br><hr width="75%">');
+
+            document.write('<div align="center"><p><a class="btn btn-theme04" href="{{path('nada_auto_ecole_Taxi') }}">  <input style="background-color:#F08080 " type="button" value=" Accueil" ></a></p></div><div align="center"><p><a  class="cp-btn-style1" href="{{path('nada_auto_ecole_valide') }}">  <input type="button" style="background-color:#F08080 " value=" Liste des Tests " ></a></p></div> ') ;
+
+        }
+        else {
+            alert("REPONDEZ D'ABORD A TOUS LES QCM, SVP !");
+        }  }
+
+    // correction et resultat
+    {#function correction() {
         if (rep>= nb_elts ) {
             NextLevel ()
 
@@ -164,9 +205,10 @@
         }
         else {
             alert("REPONDEZ D'ABORD A TOUS LES QCM, SVP !");
-        }  }
+        }  }#}
 
-        // méthodes des question
+
+        //  Timerrrrrr
 
            var Tmn = 3;
 		var sc = 0;
@@ -198,7 +240,7 @@
 		}
 
 		Go();
-
+// affichage quizzzzz
     function affich_pag(){
         var compte=0
         var compte2=0
@@ -272,13 +314,12 @@
             <p id="chrono">
 		<input type="text" id="time" name="time" readonly="yes" style="font-size:28px; margin:50px; font-weight:bolder; border:0"/>
 	</p>
-        <form>
-            <div align="center"><p>
+	           <div align="center"><p>
              <a  class="cp-btn-style1">  <input type="button" style="background-color: Transparent"
                                                   value=" Résultat !" onclick="correction()"></a>  </p>
 
                 </div>
-        </form>
+
 
     </td>
 

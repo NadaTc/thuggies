@@ -41,14 +41,14 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="index.html" class="logo"><b>CarGo espace Auto Ecole</b></a>
+        <a href="#" class="logo"><b>CarGo espace Auto Ecole</b></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
             <ul class="nav top-menu">
                 <!-- settings start -->
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="fa fa-tasks"></i>
                         <span class="badge bg-theme">4</span>
                     </a>
@@ -58,7 +58,7 @@
                             <p class="green">Vous avez 4 taches</p>
                         </li>
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <div class="task-info">
                                     <div class="desc">Ajout des tests</div>
                                     <div class="percent">40%</div>
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <div class="task-info">
                                     <div class="desc">Ajout des cours</div>
                                     <div class="percent">60%</div>
@@ -84,7 +84,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <div class="task-info">
                                     <div class="desc">Avancement des cours</div>
                                     <div class="percent">80%</div>
@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <div class="task-info">
                                     <div class="desc">Paiement des demandes</div>
                                     <div class="percent">70%</div>
@@ -117,7 +117,7 @@
                 <!-- settings end -->
                 <!-- inbox dropdown start-->
                 <li id="header_inbox_bar" class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="fa fa-envelope-o"></i>
                         <span class="badge bg-theme">5</span>
                     </a>
@@ -128,7 +128,7 @@
                         </li>
 
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <span class="photo"><img alt="avatar" src="{{ asset('assets/img/farah.jpg') }}"></span>
                                 <span class="subject">
                                     <span class="from">Farah</span>
@@ -140,7 +140,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <span class="photo"><img alt="avatar" src="{{ asset('assets/img/saif.png') }}"></span>
                                 <span class="subject">
                                     <span class="from">Saif</span>
@@ -152,7 +152,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#">
+                            <a href="#">
                                 <span class="photo"><img alt="avatar" src="{{ asset('assets/img/hanchoun.jpg') }}"></span>
                                 <span class="subject">
                                     <span class="from">Hanchoun</span>
@@ -164,7 +164,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="index.html#">Voir tous les messages</a>
+                            <a href="#">Voir tous les messages</a>
                         </li>
                     </ul>
                 </li>
@@ -189,7 +189,7 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
 
-                <p class="centered"><a href="profile.html"><img src="{{ asset('assets/img/doudi.jpg') }}" class="img-circle" width="60"></a></p>
+                <p class="centered"><a href="#"><img src="{{ asset('assets/img/doudi.jpg') }}" class="img-circle" width="60"></a></p>
                 <h5 class="centered">{{ app.user.username }} </h5>
 
                 <li class="mt">
@@ -219,10 +219,22 @@
                     </a>
                     <ul class="sub">
                         <li><a  href="{{ path('nada_auto_ecole_Test') }}">liste des tests</a></li>
-                        <li><a  href="{{ path('nada_auto_ecole_TestAdd') }}">nouveau tets </a></li>
+                        <li><a  href="{{ path('nada_auto_ecole_TestAdd') }}">nouveau tests </a></li>
                         <li><a  href="{{ path('nada_auto_ecole_quiz') }}">liste des questions </a></li>
                     </ul>
                 </li>
+
+
+                <li class="sub-menu">
+                    <a href="{{ path('farah_chat_mailAgent') }}" >
+                        <i class="fa fa-check-square"></i>
+                        <span>Mail </span>
+                    </a>
+
+                </li>
+
+
+
 
             </ul>
             <!-- sidebar menu end-->

@@ -1,0 +1,20 @@
+<table  border="1" align="center">
+
+    <h>Visite technique affecter à Votre voiture  </h>
+
+    <th>refenrence</th>
+    <th>Titre</th>
+    <th>Description</th>
+    <th>Date</th>
+
+
+
+    {% for voiture in voitures %}
+        <tr>
+            <td> {{ voiture.idVisite }} </td>
+            <td> {{ voiture.titre }} </td>
+            <td> {{ voiture.desciption }} </td>
+            <td> {{ voiture.dateDeVisite |date("m/d/Y") }} </td>
+        </tr>
+    {% endfor %}
+</table>

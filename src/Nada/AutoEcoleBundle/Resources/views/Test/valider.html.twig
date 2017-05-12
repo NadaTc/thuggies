@@ -1,0 +1,53 @@
+{% extends "@NadaAutoEcole/FrontLayout.html.twig" %}
+
+{% block title %} Tests {% endblock %}
+
+ {% block metier %}
+     <!--cour 1 -->
+
+     <div class="col-md-6 col-sm-12">
+
+         <article class="cp-taxi-holder cp-deals-holder">
+             <figure class="cp-thumb">
+
+
+
+             </figure>
+             <div class="cp-text">
+                 <h3>  Niveau : {{ testun.niveauTest}}</h3>
+                 <ul class="cp-meta-listed">
+                     <li> 5 questions </li>
+
+                 </ul>
+                 <a href="{{ path('nada_auto_ecole_FrontQuiz', {'id':testun.idTest}) }}" class="cp-btn-style1"> Passer le test </a>
+             </div>
+
+         </article>
+
+     </div>
+     <div class="col-md-6 col-sm-12">
+
+         <article class="cp-taxi-holder cp-deals-holder">
+             <figure class="cp-thumb">
+
+
+
+             </figure>
+             <div class="cp-text">
+                 <h3>  Niveau : {{ testdeux.niveauTest}}</h3>
+                 <ul class="cp-meta-listed">
+                     <li> 5 questions </li>
+
+                 </ul>
+                 <a href="{{ path('nada_auto_ecole_FrontQuizII', {'id':testdeux.idTest}) }}" class="cp-btn-style1"  > Passer le test </a>
+             </div>
+
+         </article>
+
+     </div>
+ {% endblock metier %}
+
+{% block paginator %}
+    <a href="#" class="cp-btn-style1"  > Déposer une demande de rendez vous d'examen </a>
+{% endblock %}
+

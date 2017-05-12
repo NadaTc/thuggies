@@ -71,6 +71,9 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
 
             $redirection = new RedirectResponse($this->router->generate('nada_auto_ecole_AgentAccueil'));
 
+        elseif (in_array('ROLE_EXPERT', $rolesTab, true) )
+
+            $redirection = new RedirectResponse($this->router->generate('nada_auto_ecole_expertAccueil'));
 
         elseif (in_array('ROLE_CLIENT', $rolesTab, true) )
 

@@ -12,7 +12,9 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 class ModifCoursType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
-    { $builder
+    {
+        $builder
+
         ->add('titreCours')
         ->add('contenuCours')
         ->add('imageFile', VichImageType::class, [

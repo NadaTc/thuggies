@@ -95,7 +95,16 @@ class TestsController extends Controller
 
 
 
+public function afterAction() {
+    $em = $this->getDoctrine()->getManager();
 
+
+    $testun = $em->getRepository('DataBundle:Test')->findOneBy(array('idTest'=>1));
+    $testdeux = $em->getRepository('DataBundle:Test')->findOneBy(array('idTest'=>2));
+        return $this->render("@NadaAutoEcole/Test/valider.html.twig", [
+            'testun' => $testun, 'testdeux'=>$testdeux
+        ]) ;
+}
 
 
 }

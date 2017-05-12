@@ -11,7 +11,9 @@ nada_auto_ecole_UserAccueil:
 nada_auto_ecole_Accueil:
     path:     /accueil
     defaults: { _controller: NadaAutoEcoleBundle:Welcome:Accueil }
-
+nada_auto_ecole_expertAccueil:
+    path:     /expertAccueil
+    defaults: { _controller: NadaAutoEcoleBundle:Welcome:Expert }
 
 nada_auto_ecole_Cours:
     path:     /listcours
@@ -80,7 +82,9 @@ nada_auto_ecole_CoursFront:
     path:     /listcoursFront
     defaults: { _controller: NadaAutoEcoleBundle:Cours:AfficheCoursFront }
 
-
+nada_auto_ecole_valide:
+    path:     /listtestfront
+    defaults: { _controller: NadaAutoEcoleBundle:Tests:after }
 nada_auto_ecole_LessonFront:
     path:     /listLessonFront/{id}
     defaults: { _controller: NadaAutoEcoleBundle:Cours:AfficheLesson }

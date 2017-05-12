@@ -21,7 +21,8 @@
                      </ul>
                      <a href="{{ path('nada_auto_ecole_LessonFront', {'id':c.idCours}) }}" class="cp-btn-style1">Voir les lessons</a>
                  </div>
-                 {{ facebookButton() }}
+              <span></span>   {{ facebookButton() }} <br> <br>
+                 <span></span>     {{ c.nbvote|rating(5, "fa-1x") }}
 
 
              </article>

@@ -52,6 +52,86 @@ class VisiteTechnique
      */
     private $idVoiture;
 
+    /**
+     * @return int
+     */
+    public function getIdVisite()
+    {
+        return $this->idVisite;
+    }
+
+    /**
+     * @param int $idVisite
+     */
+    public function setIdVisite($idVisite)
+    {
+        $this->idVisite = $idVisite;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * @param string $titre
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDesciption()
+    {
+        return $this->desciption;
+    }
+
+    /**
+     * @param string $desciption
+     */
+    public function setDesciption($desciption)
+    {
+        $this->desciption = $desciption;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateDeVisite()
+    {
+        return $this->dateDeVisite;
+    }
+
+    /**
+     * @param \DateTime $dateDeVisite
+     */
+    public function setDateDeVisite($dateDeVisite)
+    {
+        $this->dateDeVisite = $dateDeVisite;
+    }
+
+    /**
+     * @return \Voiture
+     */
+    public function getIdVoiture()
+    {
+        return $this->idVoiture;
+    }
+
+    /**
+     * @param \Voiture $idVoiture
+     */
+    public function setIdVoiture($idVoiture)
+    {
+        $this->idVoiture = $idVoiture;
+    }
+
 
 }
 

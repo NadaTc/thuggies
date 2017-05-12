@@ -3,7 +3,7 @@
 
 <!-- Mirrored from html.crunchpress.com/taxigo/offers.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Mar 2017 14:04:33 GMT -->
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CarGo --</title>
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css">
 
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,600,700,900,800,200,100,500,400italic' rel='stylesheet' type='text/css'>
@@ -46,8 +47,9 @@
 
                         <div class="cp-topbar">
                             <ul class="top-listed">
+                                <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+                                <li><a href="{{ path('fos_user_registration_register') }}">Joignez nous</a></li>
 
-                                <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
                                 <li>
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -70,7 +72,7 @@
                     <div class="col-md-3 col-sm-12 col-xs-6">
 
                         <strong class="cp-logo">
-                            <a href="#"></a>
+                            <a href="index.html"></a>
                         </strong>
                     </div>
                     <div class="col-md-9 col-sm-12 col-xs-6">
@@ -87,7 +89,6 @@
 
                                 {% endif %}
 
-                                <li><a href="#">Voiture</a></li>
                                 <li ><a href="#" >Adresses utiles </a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
@@ -96,36 +97,35 @@
                                     </ul>
                                 </li>
 
-                                <!--
-                                <li><a href="booking.html">View a booking</a>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="blog-sidebar.html">Blog with Sidebar</a></li>
-                                        <li><a href="blog-detail.html">Blog Detail</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Gallery</a>
-                                            <ul>
-                                                <li><a href="gallery.html">Our Gallery</a></li>
-                                                <li><a href="gallery-2.html">Gallery 2 Col</a></li>
-                                                <li><a href="gallery-3.html">Gallery 3 Col</a></li>
-                                                <li><a href="gallery-full.html">Gallery Full Width</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="testimonial.html">Testimonial</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="reservation.html">Reservation</a></li>
-                                    </ul>
-                                </li>
-                                 -->
 
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez nous<i class="fa fa-angle-down"></i></a>
 
-                                </li>
+                                <li class="dropdown"><a href="{{ path('User_affiche_voiture') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gestion Des Voitures <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_affiche_voiture') }}">Liste des voitures </a></li>
+                                        <li><a href="{{ path('User_ajout_voiture') }}">Ajouter une Voiture</a></li>
+                                    </ul>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Carnet <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_ajout_vidange') }}">Ajouter VIdange</a></li>
+                                        <li><a href="{{ path('User_ajt_assurance') }}">Ajouter Assurance</a></li>
+                                        <li><a href="{{ path('User_ajout_vignette') }}">Ajouter Vignette</a></li>
+
+                                        <li><a href="{{ path('User_ajout_rep') }}">Ajouter Reparation</a></li>
+                                    </ul>
+
+
+                                <li><a href="{{ path('offre_index') }}">Offre </a></li>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez-nous<i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('farah_chat_afficheDate') }}">Contact Expert-Auto</a></li>
+                                        <li><a href="{{ path('farah_chat_mail') }}">Contact Agent-AutoEcole</a></li>
+                                        <li><a href="{{ path('farah_chat_chat') }}">Chat</a></li>
+                                    </ul>
                             </ul>
+                            </ul>
+
                             <ul class="nav-right-listed">
                                 <li id="search-push"><i class="fa fa-search"></i></li>
                                 <li id="push" class="cp-sidemenu"><a href="#"><i class="fa fa-align-justify"></i></a></li>
@@ -258,10 +258,11 @@
             </div>
         </section>
 
+
         <section class="cp-testimonial-section pd-tb80">
             <div class="container">
                 <div class="cp-heading-style2">
-                    <h2>aaaaaaaaaaaaaa <span>aaaaaaaaaaaa</span></h2>
+                    <h2><span></span></h2>
                 </div>
                 <div class="owl-carousel" id="cp-testimonial-slider">
                     <div class="item">
@@ -327,40 +328,15 @@
                 </div>
             </div>
         </section>
+
+
+
+
     </div>
     <footer class="cp_footer">
 
-        <!--  <section class="cp-ft-top-section pd-t80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="footer-about-box">
-                            <strong class="logo">
-                                <a href="index.html"><img src="{{ asset('images/cp-logo2.png') }}" alt=""></a>
-                            </strong>
-                            <p>The Company downminor offences are fine and will not incur any additional fee's. Any other offences should be checked with our reservations urna nibh ut, our reservations alias consequatur aut perferendis doloribus asurna etiam libero nisl, in magna feugia.</p>
-                            <ul class="cp-social-links">
-                                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa  fa-envelope"></i></a></li>
-                            </ul>
-                            <ul class="cp-logo-listed">
-                                <li><a href="#"><img src="{{ asset('images/company-logo1.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo2.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo3.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo4.jpg') }}" alt=""></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+
+
 
         <section class="cp-ft-bottom-section">
             <div class="container">
@@ -391,16 +367,26 @@
 
                         <nav class="cp-footer-nav">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="offers.html">Online Offers</a></li>
-                                <li><a href="faq.html">FAQs</a></li>
-                                <li><a href="booking.html">View a booking</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
+                                <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
+                                {% else %}
+                                    <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
+
+
+                                {% endif %}
+
+                                <li><a href="#">Voiture</a></li>
+                                <li ><a href="#" >Adresses utiles </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
+                                        <li><a href="{{ path('nada_map_maplibre') }}">Recherche libre</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
-                        <p> All Rights Reserved 2016 </p>
+                        <p> All rights reserved THUGGIES__2017 </p>
                     </div>
                 </div>
             </div>
@@ -417,7 +403,8 @@
 <script src="{{ asset('js/html5shiv.js') }}" type="text/javascript"></script>
 
 <script type="text/javascript" src="{{ asset('js/migrate.js') }}"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('js/custom-script.js') }}"></script>
