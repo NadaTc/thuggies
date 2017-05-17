@@ -8,6 +8,8 @@ imports:
     - { resource: "@NadaMapBundle/Resources/config/services.yml" }
     - { resource: "@GrapheBundle/Resources/config/services.yml" }
     - { resource: "@FarahChatBundle/Resources/config/services.yml" }
+    - { resource: "@YacineNewsBundle/Resources/config/services.yml" }
+    - { resource: "@WissemCondidatBundle/Resources/config/services.yml" }
 
 
 
@@ -181,3 +183,10 @@ vich_uploader:
         product_image:
             uri_prefix:         /images/products
             upload_destination: 'C:/wamp/www/image'
+        actualite_image:
+            uri_prefix:         /images/actualite
+            upload_destination: '%kernel.root_dir%/../web/images/actualite'
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true

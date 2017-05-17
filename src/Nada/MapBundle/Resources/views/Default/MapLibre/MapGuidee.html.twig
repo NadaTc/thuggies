@@ -57,8 +57,9 @@
 
                             <div class="cp-topbar">
                                 <ul class="top-listed">
+                                    <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+                                    <li><a href="{{ path('fos_user_registration_register') }}">Joignez nous</a></li>
 
-                                    <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
                                     <li>
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -81,7 +82,7 @@
                         <div class="col-md-3 col-sm-12 col-xs-6">
 
                             <strong class="cp-logo">
-                                <a href="#"></a>
+                                <a href="index.html"></a>
                             </strong>
                         </div>
                         <div class="col-md-9 col-sm-12 col-xs-6">
@@ -90,8 +91,14 @@
                                 <ul class="navbar-nav">
                                     <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
                                     <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
-                                    <li><a href="{{ path('nada_auto_ecole_ListFrontTest') }}">Tests</a></li>
-                                    <li><a href="#">Voiture</a></li>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
+                                    {% else %}
+                                        <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
+
+
+                                    {% endif %}
+
                                     <li ><a href="#" >Adresses utiles </a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
@@ -100,36 +107,35 @@
                                         </ul>
                                     </li>
 
-                                    <!--
-                                    <li><a href="booking.html">View a booking</a>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <i class="fa fa-angle-down"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-sidebar.html">Blog with Sidebar</a></li>
-                                            <li><a href="blog-detail.html">Blog Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Gallery</a>
-                                                <ul>
-                                                    <li><a href="gallery.html">Our Gallery</a></li>
-                                                    <li><a href="gallery-2.html">Gallery 2 Col</a></li>
-                                                    <li><a href="gallery-3.html">Gallery 3 Col</a></li>
-                                                    <li><a href="gallery-full.html">Gallery Full Width</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="testimonial.html">Testimonial</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="reservation.html">Reservation</a></li>
-                                        </ul>
-                                    </li>
-                                     -->
 
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez nous<i class="fa fa-angle-down"></i></a>
 
-                                    </li>
+                                    <li class="dropdown"><a href="{{ path('User_affiche_voiture') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gestion Des Voitures <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="{{ path('User_affiche_voiture') }}">Liste des voitures </a></li>
+                                            <li><a href="{{ path('User_ajout_voiture') }}">Ajouter une Voiture</a></li>
+                                        </ul>
+
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Carnet <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="{{ path('User_ajout_vidange') }}">Ajouter VIdange</a></li>
+                                            <li><a href="{{ path('User_ajt_assurance') }}">Ajouter Assurance</a></li>
+                                            <li><a href="{{ path('User_ajout_vignette') }}">Ajouter Vignette</a></li>
+
+                                            <li><a href="{{ path('User_ajout_rep') }}">Ajouter Reparation</a></li>
+                                        </ul>
+
+
+                                    <li><a href="{{ path('offre_index') }}">Offre </a></li>
+
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez-nous<i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="{{ path('farah_chat_afficheDate') }}">Contact Expert-Auto</a></li>
+                                            <li><a href="{{ path('farah_chat_mail') }}">Contact Agent-AutoEcole</a></li>
+                                            <li><a href="{{ path('farah_chat_chat') }}">Chat</a></li>
+                                        </ul>
                                 </ul>
+                                </ul>
+
                                 <ul class="nav-right-listed">
                                     <li id="search-push"><i class="fa fa-search"></i></li>
                                     <li id="push" class="cp-sidemenu"><a href="#"><i class="fa fa-align-justify"></i></a></li>

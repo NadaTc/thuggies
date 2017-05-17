@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from html.crunchpress.com/taxigo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 09 Mar 2017 14:03:41 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> cargo de yacine  </title>
+
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/theme-color.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}" type="text/css">
+
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:400,300,600,700,900,800,200,100,500,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div id="wrapper">
+
+    <header class="cp_header">
+
+        <div id="cp-slide-search" class="cp_side-search">
+            <form method="get">
+                <input type="text" placeholder="Enter Your Name..." required>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+
+        <!-- iciiiiiiiiiiiiiii -->
+
+        <div class="cp-navigation-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="cp-topbar">
+                            <ul class="top-listed">
+
+
+                                <li>
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            FR
+                                            <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li><a href="#">fr</a></li>
+                                            <li><a href="#">en</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <span class="tp-num">Appelez nous +216 53 75 38 37 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-6">
+
+                        <strong class="cp-logo">
+                            <a href="index.html"></a>
+                        </strong>
+                    </div>
+                    <div class="col-md-9 col-sm-12 col-xs-6">
+
+                        <div class="cp-nav-holder">
+                            <ul class="navbar-nav">
+                                <li><a href="http://localhost/cargo/web/app_dev.php/afficheclient">Accueil</a></li>
+
+                                <li><a href="offers.html">Tests</a></li>
+                                <li ><a href="#" >Adresses utiles </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="faq.html">Recherche guidée</a></li>
+                                        <li><a href="faq-sidebar.html">Recherche libre</a></li>
+
+                                    </ul>
+                                </li>
+
+
+
+
+                                    <!--
+
+                                    </li>
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Gallery</a>
+                                                <ul>
+                                                    <li><a href="gallery.html">Our Gallery</a></li>
+                                                    <li><a href="gallery-2.html">Gallery 2 Col</a></li>
+                                                    <li><a href="gallery-3.html">Gallery 3 Col</a></li>
+                                                    <li><a href="gallery-full.html">Gallery Full Width</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="testimonial.html">Testimonial</a></li>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="reservation.html">Reservation</a></li>
+                                        </ul>
+                                    </li>
+                                     -->
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez nous<i class="fa fa-angle-down"></i></a>
+
+                                </li>
+                            </ul>
+                            <ul class="nav-right-listed">
+                                <li id="search-push"><i class="fa fa-search"></i></li>
+                                <li id="push" class="cp-sidemenu"><a href="#"><i class="fa fa-align-justify"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% block a %}
+    <fieldset style="text-align: center ; background-color: #FFFFFF;" >
+        <legend ><h1 >News_CarGo</h1></legend>
+
+
+
+
+        {% for a in actualite %}
+
+            <fieldset style="background-color:ghostwhite;text-align: center">
+                <legend >{{ a.titreActualite }}</legend>
+
+
+
+
+                <body>
+                <img src="{{ asset(vich_uploader_asset(a,'imageFile')) }}" width="400" height="400" />
+                </body>
+                <div style="text-align: right;">
+                    <br>{{ socialButtons( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}<br>
+                </div>
+                <h1>Contenu :  {{ a.contenuActualite }}===Descriptif:{{ a.descriptif }}===Categorie :{{ a.categorie }} </h1>
+
+                {% for a in commentaire %}
+                    <fieldset style="text-align: left ;background-color:#FAFAFA;">
+
+                        <p1> {{ a.textCommentaire }}<br></p1>
+                    </fieldset>
+                {% endfor %}
+
+
+
+                <a type="bottom" href="com2/{{ a.Idactualite }}">comment</a>
+                </form>
+            </fieldset>
+
+            </tr>
+
+            <script type="text/javascript">
+                // always refresh on URL change
+                window.addEventListener("hashchange", function () {
+                    addthis.layers.refresh();
+                });
+            </script>
+        {% endfor %}
+        {% block pagination %}
+
+            <div class="navigation text-center">
+                {{ knp_pagination_render(actualite) }}
+            </div>
+        {% endblock %}
+
+    </fieldset>
+{% endblock %}

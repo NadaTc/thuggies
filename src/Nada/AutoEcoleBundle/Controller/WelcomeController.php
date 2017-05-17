@@ -11,7 +11,13 @@ class WelcomeController extends Controller
         return $this->render('', array('name' => $name));
     }
 
-    public function AgentAction() {return $this->render("NadaAutoEcoleBundle:Welcome:HomeAgent.html.twig");}
+    public function AgentAction() {
+
+        $em = $this->getDoctrine()->getManager();
+        $plus =$em->getRepository("DataBundle:CoursCode")->findBy(array('nbvote'=> 5) ) ;
+
+
+        return $this->render("NadaAutoEcoleBundle:Welcome:HomeAgent.html.twig",array("plus" => $plus));}
 
     public function UserAction() { return $this->render("NadaAutoEcoleBundle:Welcome:HomeUser.html.twig");}
     public function AccueilAction() { return $this->render("NadaAutoEcoleBundle:Welcome:Home.html.twig");}

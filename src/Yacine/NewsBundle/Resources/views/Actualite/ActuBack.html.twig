@@ -1,0 +1,102 @@
+
+
+{% extends "@NadaAutoEcole/BackLayout.html.twig" %}
+
+{% block sidemenu %}
+    <aside>
+        <div id="sidebar"  class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+
+                <p class="centered"><a href="profile.html"><img src="{{ asset('assets/img/doudi.jpg') }}" class="img-circle" width="60"></a></p>
+                <h5 class="centered">{{ app.user.username }} </h5>
+
+                <li class="mt">
+                    <a class="active" href={{ path('nada_auto_ecole_expertAccueil') }}>
+                        <i class="fa fa-dashboard"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;" >
+                        <i class="fa fa-desktop"></i>
+                        <span>Les actualités </span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{ path('yacine_news_afficheBack') }}" >Liste des actualités</a></li>
+                        <li><a  href="{{ path('yacine_news_actualite') }}">Nouvelle actualité </a></li>
+
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;" >
+                        <i class="fa fa-desktop"></i>
+                        <span>Les Discussions </span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{ path('farah_chat_afficheDE') }}">Liste des discussions</a></li>
+                        <li><a  href="{{ path('farah_chat_chatEx') }}">Chat </a></li>
+
+                    </ul>
+                </li>
+
+
+
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+{% endblock sidemenu %}
+{% block espace %} cargo espace expert auto {% endblock %}
+
+{% block titre %} Espace Actualités {% endblock titre %}
+{% block nonaction %} Liste des actualités {% endblock %}
+
+{%  block metier %}
+    <thead>
+    <tr>
+        <th><i class="fa fa-bullhorn"></i> Titre</th>
+        <th class="hidden-phone"><i class="fa fa-question-circle"></i> Contenu</th>
+
+        <th> <i class="fa fa-image"></i>  Image</th>
+        <th style="align-content: center"><a href="{{ path('yacine_news_actualite') }}">
+                <button class="btn btn-success btn-xs"><i class="fa fa-plus" > </i> Ajout</button></a></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for c in actualite %}
+        <tr>
+            <td> {{ c.titreActualite }} </td>
+            <td  >  {{c.contenuActualite|length > 100 ? (c.contenuActualite[:50] ~ '... Lire la suite') : c.contenuActualite }}</td>
+
+            <td style="font-size: large"> <img src=" {{ asset(vich_uploader_asset(c, 'imageFile')) }}" style="width: 200px" /></td>
+
+            <td>
+
+
+                <a href="{{ path('yacine_news_modifier', {'id':c.idActualite} ) }}">
+                    <button class="btn btn-primary btn-xs" id="mc" >
+                        <i class="fa fa-pencil" ></i>
+                    </button></a>
+
+                <a href="{{ path('yacine_news_supp' , {'id':c.idActualite} ) }}"> <button class="btn btn-danger btn-xs"  >
+                        <i class="fa fa-trash-o " > </i> </button> </a>
+
+
+            </td>
+        </tr>
+    {% endfor %}
+
+
+    </tbody>
+{% endblock metier %}
+
+{% block pagination %}
+
+    <div class="navigation text-center">
+        {{ knp_pagination_render(actualite) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    wissem_condidat.example:
+#        class: Wissem\CondidatBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

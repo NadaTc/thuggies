@@ -1,0 +1,47 @@
+wissem_condidat_homepage:
+    path:     /
+    defaults: { _controller: WissemCondidatBundle:Default:index }
+
+
+wissem_condidat_list_demande:
+    path:     /listdemande
+    defaults: { _controller: WissemCondidatBundle:Demande:Affichedemande}
+
+
+wissem_condidat_gestUserDemande:
+    path:     /gestuserdemande
+    defaults: { _controller: WissemCondidatBundle:Accept:AfficheAcceptuser}
+
+wissem_condidat_demande_supp:
+    path:     /suppdemande/{id}
+    defaults: { _controller: WissemCondidatBundle:Demande:SuppDemande}
+
+
+wissem_condidat_accept_supp:
+    path:     /supaaccept/{id}
+    defaults: { _controller: WissemCondidatBundle:Accept:SuppAccept}
+
+
+
+
+wissem_condidat_acceptlist:
+    path:     /acceptlist
+    defaults: { _controller: WissemCondidatBundle:Accept:AfficheAccept}
+
+
+
+wissem_condidat_acceptlistuser:
+    path:     /acceptlistuser
+    defaults: { _controller: WissemCondidatBundle:Accept:AfficheAcceptuser}
+
+
+wissem_condidat_Ajout_accept:
+    path:     /acceptajout/{id}
+    defaults: { _controller: WissemCondidatBundle:Accept:AjoutAccept}
+
+
+
+
+wissem_condidat_Ajout_demande:
+    path:     /ajoutdemande
+    defaults: { _controller: WissemCondidatBundle:Demande:AjoutDemande}

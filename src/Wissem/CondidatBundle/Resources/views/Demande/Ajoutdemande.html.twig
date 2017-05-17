@@ -1,0 +1,93 @@
+{% extends "@NadaAutoEcole/FrontLayout.html.twig" %}
+
+{% block title  %}  Demandes {% endblock %}
+
+{% block metier %}
+
+    <table class="table table-striped table-advance table-hover">
+        <h4><i class="fa fa-angle-right"></i> Ajout des Demandes </h4>
+        <hr>
+
+        <div class="form-panel">
+
+            {{ form_start(formAjoutdemande) }}
+
+
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.nom) }} :
+                {{ form_widget(formAjoutdemande.nom , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.prenom) }} :
+                {{ form_widget(formAjoutdemande.prenom , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.cin) }} :
+                {{ form_widget(formAjoutdemande.cin , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.dateNaisance) }} :
+                {{ form_widget(formAjoutdemande.dateNaisance , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.rectoCin) }} :
+                {{ form_widget(formAjoutdemande.rectoCin , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.adresse) }} :
+                {{ form_widget(formAjoutdemande.adresse , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.numPasseport) }} :
+                {{ form_widget(formAjoutdemande.numPasseport , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.nationalite) }} :
+                {{ form_widget(formAjoutdemande.nationalite , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+            <div class="form-group">
+
+                {{ form_label(formAjoutdemande.etat) }} :
+                {{ form_widget(formAjoutdemande.etat , {'attr': {'class':'form-control'}}  ) }}
+
+            </div>
+
+
+
+
+
+
+            <div class="form-group">
+
+
+                {{ form_widget(formAjoutdemande.Ajouter, {'attr': {'class':'btn btn-theme'}}  ) }}
+
+            </div>
+
+
+
+            {{ form_end(formAjoutdemande) }}
+
+        </div>
+
+
+
+    </table>
+
+{% endblock %}

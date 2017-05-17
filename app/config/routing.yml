@@ -1,3 +1,11 @@
+wissem_condidat:
+    resource: "@WissemCondidatBundle/Resources/config/routing.yml"
+    prefix:   /
+
+yacine_news:
+    resource: "@YacineNewsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 farah_chat:
     resource: "@FarahChatBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,30 @@
+yacine_news_homepage:
+    path:     /
+    defaults: { _controller: YacineNewsBundle:Default:index }
+yacine_news_actualite:
+    path:     /actualite
+    defaults: { _controller: YacineNewsBundle:Actualite:AjoutActualite }
+yacine_news_affiche:
+    path:     /afficheYacine
+    defaults: { _controller: YacineNewsBundle:Actualite:AfficheNews }
+yacine_news_modifier:
+    path:     /modifierAc/{id}
+    defaults: { _controller: YacineNewsBundle:Actualite:ModifierActualite }
+yacine_news_com:
+    path:     /comAc
+    defaults: { _controller: YacineNewsBundle:Actualite:AjoutCom }
+yacine_news_affichez:
+    path:     /afficheComs
+    defaults: { _controller: YacineNewsBundle:Actualite:AfficheCom }
+yacine_news_com2:
+    path:     /com2/{id}
+    defaults: { _controller: YacineNewsBundle:Actualite:AjoutCom2 }
+yacine_news_supp:
+    path:     /supp/{id}
+    defaults: { _controller: YacineNewsBundle:Actualite:suppActualite }
+yacine_news_afficheclient:
+    path:     /afficheclient
+    defaults: { _controller: YacineNewsBundle:Actualite:AfficheclientNews }
+yacine_news_afficheBack:
+    path:     /afficheBack
+    defaults: { _controller: YacineNewsBundle:Actualite:AfficheBackNews }

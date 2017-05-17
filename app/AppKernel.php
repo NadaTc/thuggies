@@ -29,7 +29,8 @@ class AppKernel extends Kernel
             new blackknight467\StarRatingBundle\StarRatingBundle(),
             new GrapheBundle\GrapheBundle(),
             new Farah\ChatBundle\FarahChatBundle(),
-
+            new Yacine\NewsBundle\YacineNewsBundle(),
+            new Wissem\CondidatBundle\WissemCondidatBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -76,7 +76,7 @@ nada_auto_ecole_FrontQuizII:
     defaults: { _controller: NadaAutoEcoleBundle:Quiz:deuxquiz }
 nada_auto_ecole_Taxi:
     path:     /taxi
-    defaults: { _controller: NadaAutoEcoleBundle:Quiz:Taxi }
+    defaults: { _controller: YacineNewsBundle:Actualite:AfficheclientNews }
 
 nada_auto_ecole_CoursFront:
     path:     /listcoursFront
