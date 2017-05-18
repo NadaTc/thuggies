@@ -4,50 +4,74 @@
 {% endblock %}
 {% block sidemenu %}
     <aside>
-        <div id="sidebar"  class="nav-collapse ">
-            <!-- sidebar menu start-->
-            <ul class="sidebar-menu" id="nav-accordion">
+    <div id="sidebar"  class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
 
-                <p class="centered"><a href="#"><img src="{{ asset('assets/img/doudi.jpg') }}" class="img-circle" width="60"></a></p>
-                <h5 class="centered">{{ app.user.username }} </h5>
+            <p class="centered"><a href="#"><img src="{{ asset('assets/img/doudi.jpg') }}" class="img-circle" width="60"></a></p>
+            <h5 class="centered">{{ app.user.username }} </h5>
 
-                <li class="mt">
-                    <a class="active" href={{ path('nada_auto_ecole_expertAccueil') }}>
-                        <i class="fa fa-dashboard"></i>
-                        <span>Accueil</span>
-                    </a>
-                </li>
+            <li class="mt">
+                <a class="active" href={{ path('nada_auto_ecole_expertAccueil') }}>
+                    <i class="fa fa-dashboard"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;" >
-                        <i class="fa fa-desktop"></i>
-                        <span>Les actualités </span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="{{ path('yacine_news_afficheBack') }}">Liste des actualités</a></li>
-                        <li><a  href="{{ path('yacine_news_actualite') }}">Nouvelle actualité </a></li>
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-desktop"></i>
+                    <span>Les actualités </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('yacine_news_afficheBack') }}">Liste des actualités</a></li>
+                    <li><a  href="{{ path('yacine_news_actualite') }}">Nouvelle actualité </a></li>
 
-                    </ul>
-                </li>
+                </ul>
+            </li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;" >
-                        <i class="fa fa-desktop"></i>
-                        <span>Les Discussions </span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="{{ path('farah_chat_afficheDE') }}">Liste des discussions</a></li>
-                        <li><a  href="{{ path('farah_chat_chatEx') }}">Chat </a></li>
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-desktop"></i>
+                    <span>Les Discussions </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('farah_chat_afficheDE') }}">Liste des discussions</a></li>
+                    <li><a  href="{{ path('farah_chat_chatEx') }}">Chat </a></li>
 
-                    </ul>
-                </li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-cogs"></i>
+                    <span>Carnet de suivie Des Voitures</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{ asset('http://localhost/thuggies/web/app_dev.php/adminassurance') }}">Assurance</a></li>
+                    <li><a  href="{{ asset('http://localhost/thuggies/web/app_dev.php/adminvidange') }}">Vidange</a></li>
+                </ul>
+
+            </li>
+
+
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class=" fa fa-bar-chart-o"></i>
+                    <span>Statistique</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{ asset('http://localhost/thuggies/web/app_dev.php/Graphe/pie') }}">Assurance</a></li>
+                    <li><a  href="{{ asset('http://localhost/thuggies/web/app_dev.php/Graphe/histo') }}">Kilometrage</a></li>
+                </ul>
+            </li>
 
 
 
-            </ul>
-            <!-- sidebar menu end-->
-        </div>
-    </aside>
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
 {% endblock sidemenu %}
 
     {% block section %}

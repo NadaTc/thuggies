@@ -65,8 +65,9 @@ class DemandeController extends Controller
         }
 
         $demande=new Demande() ;
-  $demande->setIdUser($user);
+  $demande->setIdDemande($user);
         $demande->setEtat("Non traité");
+
 
 
 

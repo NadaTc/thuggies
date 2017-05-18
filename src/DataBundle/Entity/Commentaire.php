@@ -1,9 +1,6 @@
 <?php
-
 namespace DataBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Commentaire
  *
@@ -20,14 +17,11 @@ class Commentaire
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idCommentaire;
-
-
     /**
      *@ORM\ManyToOne(targetEntity="User")
      *@ORM\JoinColumn(name="id_user", referencedColumnName="id")
      */
     private $id_user ;
-
     /**
      * @return mixed
      */
@@ -35,7 +29,6 @@ class Commentaire
     {
         return $this->id_user;
     }
-
     /**
      * @param mixed $id_user
      */
@@ -43,16 +36,12 @@ class Commentaire
     {
         $this->id_user = $id_user;
     }
-
-
-
     /**
      * @var string
      *
      * @ORM\Column(name="text_commentaire", type="text", length=65535, nullable=false)
      */
     private $textCommentaire;
-
     /**
      * @var \Actualite
      *
@@ -62,7 +51,6 @@ class Commentaire
      * })
      */
     private $idActualite;
-
     /**
      * @return int
      */
@@ -70,7 +58,6 @@ class Commentaire
     {
         return $this->idCommentaire;
     }
-
     /**
      * @param int $idCommentaire
      */
@@ -78,7 +65,6 @@ class Commentaire
     {
         $this->idCommentaire = $idCommentaire;
     }
-
     /**
      * @return string
      */
@@ -86,7 +72,6 @@ class Commentaire
     {
         return $this->textCommentaire;
     }
-
     /**
      * @param string $textCommentaire
      */
@@ -94,7 +79,6 @@ class Commentaire
     {
         $this->textCommentaire = $textCommentaire;
     }
-
     /**
      * @return \Actualite
      */
@@ -102,7 +86,6 @@ class Commentaire
     {
         return $this->idActualite;
     }
-
     /**
      * @param \Actualite $idActualite
      */
@@ -110,7 +93,4 @@ class Commentaire
     {
         $this->idActualite = $idActualite;
     }
-
-
 }
-

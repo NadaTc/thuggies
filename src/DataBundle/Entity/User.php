@@ -1,46 +1,33 @@
 <?php
 namespace DataBundle\Entity ;
-
 use FOS\UserBundle\Model\User as BaseUser;
-
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
-
 /**
  * Created by PhpStorm.
  * User: Nada
  * Date: 25/03/2017
  * Time: 16:47
  */
-
 /**
-
  * @ORM\Entity
-
  * @ORM\Table(name="user")
  * * @Vich\Uploadable
  */
 class User extends BaseUser
 {
     /**
-
      * @ORM\Id
-
      * @ORM\Column(type="integer")
-
      * @ORM\GeneratedValue(strategy="AUTO")
-
      */
-
     protected $id;
-
     /**
      * @ORM\Column(name="nom", type="string", length=255, nullable=true)
      */
     protected $nom;
-
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
@@ -50,29 +37,24 @@ class User extends BaseUser
      * @var File
      */
     private $imageFile;
-
     /**
      * @ORM\Column(type="string", length=255,nullable=true)
      *
      * @var string
      */
     private $imageName;
-
     /**
      * @ORM\Column(type="integer", nullable=true)
      *
      * @var integer
      */
     private $imageSize;
-
     /**
      * @ORM\Column(type="datetime",nullable=true)
      *
      * @var \DateTime
      */
     private $updatedAt;
-
-
     /**
      * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true)
      */
@@ -81,9 +63,6 @@ class User extends BaseUser
      * @ORM\Column(name="facebookAccessToken", type="string", length=255, nullable=true)
      */
     protected $facebookAccessToken;
-
-
-
     /**
      * @return string
      */
@@ -91,7 +70,6 @@ class User extends BaseUser
     {
         return $this->username;
     }
-
     /**
      * @param string $username
      */
@@ -99,7 +77,6 @@ class User extends BaseUser
     {
         $this->username = $username;
     }
-
     /**
      * @return mixed
      */
@@ -107,12 +84,10 @@ class User extends BaseUser
     {
         return $this->id;
     }
-
     public function getImageFile()
     {
         return $this->imageFile;
     }
-
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
@@ -127,16 +102,13 @@ class User extends BaseUser
     public function setImageFile(File $image = null)
     {
         $this->imageFile = $image;
-
         if ($image) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->updatedAt = new \DateTimeImmutable();
         }
-
         return $this;
     }
-
     /**
      * @return File|null
      */
@@ -148,10 +120,8 @@ class User extends BaseUser
     public function setImageName($imageName)
     {
         $this->imageName = $imageName;
-
         return $this;
     }
-
     /**
      * @return string|null
      */
@@ -159,7 +129,6 @@ class User extends BaseUser
     {
         return $this->imageName;
     }
-
     /**
      * @param integer $imageSize
      *
@@ -168,10 +137,8 @@ class User extends BaseUser
     public function setImageSize($imageSize)
     {
         $this->imagesize = $imageSize;
-
         return $this;
     }
-
     /**
      * @return integer|null
      */
@@ -179,7 +146,6 @@ class User extends BaseUser
     {
         return $this->imageSize;
     }
-
     /**
      * @return mixed
      */
@@ -187,7 +153,6 @@ class User extends BaseUser
     {
         return $this->nom;
     }
-
     /**
      * @param mixed $nom
      */
@@ -195,8 +160,6 @@ class User extends BaseUser
     {
         $this->nom = $nom;
     }
-
-
     /**
      * @param mixed $id
      */
@@ -204,7 +167,6 @@ class User extends BaseUser
     {
         $this->id = $id;
     }
-
     /**
      * @return mixed
      */
@@ -212,7 +174,6 @@ class User extends BaseUser
     {
         return $this->facebookId;
     }
-
     /**
      * @param mixed $facebookId
      */
@@ -220,7 +181,6 @@ class User extends BaseUser
     {
         $this->facebookId = $facebookId;
     }
-
     /**
      * @return mixed
      */
@@ -228,7 +188,6 @@ class User extends BaseUser
     {
         return $this->facebookAccessToken;
     }
-
     /**
      * @param mixed $facebookAccessToken
      */
@@ -236,9 +195,4 @@ class User extends BaseUser
     {
         $this->facebookAccessToken = $facebookAccessToken;
     }
-
-
-
-
-
 }

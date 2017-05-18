@@ -50,7 +50,7 @@ class AcceptController extends Controller
 
         }
         $em = $this->getDoctrine()->getManager();
-        $accept = $em->getRepository("DataBundle:Accept")->findBy(array('id_user'=>$user));
+        $accept = $em->getRepository("DataBundle:Accept")->findBy(array('idAccept'=>$user));
 
         return $this->render("WissemCondidatBundle:accept:gestDemandeUser.html.twig",
             array('accept' => $accept)
@@ -82,11 +82,19 @@ class AcceptController extends Controller
 
             $username = $user->getUsername();
 
-
-
         }
 
+        $em = $this->getDoctrine()->getManager();
+        $user= $em->getRepository("DataBundle:User")->findOneBy(array('id'=>$id)) ;
+        $dema= $em->getRepository("DataBundle:Demande")->findOneBy(array('idDemande'=>$id)) ;
+
+
+
+
+
+
         $accept=new Accept() ;
+       $accept->setIdAccept($dema) ;
         $accept->setAgentName($username);
 
         $Form =$this->createForm(AjoutAcceptType::class, $accept) ;

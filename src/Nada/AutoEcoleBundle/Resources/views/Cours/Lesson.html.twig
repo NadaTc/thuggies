@@ -34,7 +34,7 @@
 
         <div id="cp-slide-search" class="cp_side-search">
             <form method="get">
-                <input type="text" placeholder="Enter Your Name..." required>
+                <input type="text" placeholder="Chercher..." required>
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -49,8 +49,9 @@
 
                         <div class="cp-topbar">
                             <ul class="top-listed">
+                                <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+                                <li><a href="{{ path('fos_user_registration_register') }}">Joignez nous</a></li>
 
-                                <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
                                 <li>
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -73,7 +74,7 @@
                     <div class="col-md-3 col-sm-12 col-xs-6">
 
                         <strong class="cp-logo">
-                            <a href="#"></a>
+                            <a href="index.html"></a>
                         </strong>
                     </div>
                     <div class="col-md-9 col-sm-12 col-xs-6">
@@ -90,7 +91,6 @@
 
                                 {% endif %}
 
-                                <li><a href="#">Voiture</a></li>
                                 <li ><a href="#" >Adresses utiles </a>
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
@@ -100,10 +100,34 @@
                                 </li>
 
 
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez nous<i class="fa fa-angle-down"></i></a>
 
-                                </li>
+                                <li class="dropdown"><a href="{{ path('User_affiche_voiture') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Espace Voitures <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_affiche_voiture') }}">Liste des voitures </a></li>
+                                        <li><a href="{{ path('User_ajout_voiture') }}">Ajouter une Voiture</a></li>
+                                    </ul>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Carnet <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('User_ajout_vidange') }}">Ajouter VIdange</a></li>
+                                        <li><a href="{{ path('User_ajt_assurance') }}">Ajouter Assurance</a></li>
+                                        <li><a href="{{ path('User_ajout_vignette') }}">Ajouter Vignette</a></li>
+
+                                        <li><a href="{{ path('User_ajout_rep') }}">Ajouter Reparation</a></li>
+                                    </ul>
+
+
+                                <li><a href="{{ path('offre_index') }}">Offre </a></li>
+
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contactez-nous<i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ path('farah_chat_afficheDate') }}">Contact Expert-Auto</a></li>
+                                        <li><a href="{{ path('farah_chat_mail') }}">Contact Agent-AutoEcole</a></li>
+                                        <li><a href="{{ path('farah_chat_chat') }}">Chat</a></li>
+                                    </ul>
                             </ul>
+                            </ul>
+
                             <ul class="nav-right-listed">
                                 <li id="search-push"><i class="fa fa-search"></i></li>
                                 <li id="push" class="cp-sidemenu"><a href="#"><i class="fa fa-align-justify"></i></a></li>

@@ -75,11 +75,6 @@ class CoursCode
      */
     private $nbvote ;
 
-    public function getImageFile()
-    {
-        return $this->imageFile;
-    }
-
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
@@ -107,6 +102,11 @@ class CoursCode
     /**
      * @return File|null
      */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
     /**
      * @param string $imageName
      *
