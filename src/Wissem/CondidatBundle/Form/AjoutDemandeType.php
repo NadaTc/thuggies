@@ -4,6 +4,7 @@ namespace Wissem\CondidatBundle\Form;
 
 
 use Doctrine\DBAL\Types\StringType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -36,7 +37,7 @@ class AjoutDemandeType extends AbstractType
         ->add('numPasseport', IntegerType::class)
         ->add('nationalite',TextType::class)
         ->add('adresse',TextType::class)
-        ->add('etat')
+
         ->add('Ajouter',SubmitType::class) ;
 
 

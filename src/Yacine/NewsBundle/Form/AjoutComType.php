@@ -15,7 +15,7 @@ class AjoutComType extends AbstractType
 
             ->add('textCommentaire')
 
-            ->add('Coment',SubmitType::class);
+            ->add('Commenter',SubmitType::class);
 
         ;
     }

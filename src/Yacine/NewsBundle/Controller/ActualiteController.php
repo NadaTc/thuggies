@@ -38,8 +38,18 @@ class ActualiteController extends Controller
     {$em = $this->getDoctrine()->getManager();
         $commentaire=$em->getRepository("DataBundle:Commentaire")->findBy(array('idActualite'=>$id), array('idCommentaire' =>  'DESC'));
 
-        return $this->render("NadaAutoEcoleBundle:Quiz:taxi.html.twig", array('comact' => $commentaire)) ;
+        $adccom = new Commentaire();
+        $Form = $this->createForm(AjoutComType::class, $adccom);
+        $Form->handleRequest($request);
+        if ($Form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($adccom);
+            $em->flush(); }
+
+        return $this->render("NadaAutoEcoleBundle:Quiz:taxi.html.twig", array('comact' => $commentaire, 'formAddCom'=> $Form->createView() )) ;
         }
+
+
 
 
     function AfficheclientNewsAction(Request $request){
@@ -55,10 +65,19 @@ class ActualiteController extends Controller
         $pagination = $paginator->paginate(
             $actualite,
             $request->query->getInt('page', 1)/*page number*/,
-            $request->query->getInt('limit', 3) /*limit per page*/
+            $request->query->getInt('limit', 3) /*limit per page*/   );
 
-        );
-        return $this->render("NadaAutoEcoleBundle:Quiz:taxi.html.twig", ['actualite'=>$pagination,'commentaire'=>$commentaire, 'plus'=>$plus]);
+        $adccom = new Commentaire();
+      //  $adccom->setIdActualite($actualite->) ;
+        $Form = $this->createForm(AjoutComType::class, $adccom);
+        $Form->handleRequest($request);
+        if ($Form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($adccom);
+            $em->flush(); }
+
+
+        return $this->render("NadaAutoEcoleBundle:Quiz:taxi.html.twig", ['actualite'=>$pagination,'commentaire'=>$commentaire, 'plus'=>$plus, 'AddCom'=> $Form->createView() ]);
     }
 
     function AfficheBackNewsAction(Request $request){
@@ -109,6 +128,13 @@ class ActualiteController extends Controller
         return $this->render("YacineNewsBundle:Actualite:AjouterNews.html.twig", array('formAjoutActualite'=> $Form->createView())) ;
 
     }
+
+
+
+
+
+
+
         public function ModifierActualiteAction($id, Request $request)
         {
             $em = $this->getDoctrine()->getManager();

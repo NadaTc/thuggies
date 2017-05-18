@@ -1,49 +1,50 @@
 <?php
+namespace DataBundle\Entity ;
 
-namespace DataBundle\Entity;
+use FOS\UserBundle\Model\User as BaseUser;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
- * CoursCode
- *
- * @ORM\Table(name="cours_code")
- * @ORM\Entity
- * @Vich\Uploadable
+ * Created by PhpStorm.
+ * User: Nada
+ * Date: 25/03/2017
+ * Time: 16:47
  */
-class CoursCode
+
+/**
+
+ * @ORM\Entity
+
+ * @ORM\Table(name="user")
+ * * @Vich\Uploadable
+ */
+class User extends BaseUser
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_cours", type="integer", nullable=false)
+
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+
+     * @ORM\Column(type="integer")
+
+     * @ORM\GeneratedValue(strategy="AUTO")
+
      */
-    private $idCours;
+
+    protected $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="titre_cours", type="string", length=50, nullable=false)
+     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
      */
-    private $titreCours;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="contenu_cours", type="text", length=65535, nullable=false)
-     */
-    private $contenuCours;
-
-
+    protected $nom;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="cours_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="user_image", fileNameProperty="imageName", size="imageSize")
      * @Assert\File(maxSize="1200k",mimeTypes={"image/png", "image/jpeg", "image/pjpeg"})
      *
      * @var File
@@ -70,10 +71,42 @@ class CoursCode
      * @var \DateTime
      */
     private $updatedAt;
+
+
     /**
-     * @ORM\Column(name="nb_vote", type="integer", nullable=true)
+     * @ORM\Column(name="facebook_id", type="string", length=255, nullable=true)
      */
-    private $nbvote ;
+    protected $facebookId;
+    /**
+     * @ORM\Column(name="facebookAccessToken", type="string", length=255, nullable=true)
+     */
+    protected $facebookAccessToken;
+
+
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function getImageFile()
     {
@@ -89,7 +122,7 @@ class CoursCode
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      *
-     * @return CoursCode
+     * @return User
      */
     public function setImageFile(File $image = null)
     {
@@ -110,7 +143,7 @@ class CoursCode
     /**
      * @param string $imageName
      *
-     * @return CoursCode
+     * @return User
      */
     public function setImageName($imageName)
     {
@@ -130,7 +163,7 @@ class CoursCode
     /**
      * @param integer $imageSize
      *
-     * @return CoursCode
+     * @return User
      */
     public function setImageSize($imageSize)
     {
@@ -148,67 +181,60 @@ class CoursCode
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getIdCours()
+    public function getNom()
     {
-        return $this->idCours;
+        return $this->nom;
     }
 
     /**
-     * @param int $idCours
+     * @param mixed $nom
      */
-    public function setIdCours($idCours)
+    public function setNom($nom)
     {
-        $this->idCours = $idCours;
+        $this->nom = $nom;
     }
 
-    /**
-     * @return string
-     */
-    public function getTitreCours()
-    {
-        return $this->titreCours;
-    }
 
     /**
-     * @param string $titreCours
+     * @param mixed $id
      */
-    public function setTitreCours($titreCours)
+    public function setId($id)
     {
-        $this->titreCours = $titreCours;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContenuCours()
-    {
-        return $this->contenuCours;
-    }
-
-    /**
-     * @param string $contenuCours
-     */
-    public function setContenuCours($contenuCours)
-    {
-        $this->contenuCours = $contenuCours;
+        $this->id = $id;
     }
 
     /**
      * @return mixed
      */
-    public function getNbvote()
+    public function getFacebookId()
     {
-        return $this->nbvote;
+        return $this->facebookId;
     }
 
     /**
-     * @param mixed $nbvote
+     * @param mixed $facebookId
      */
-    public function setNbvote($nbvote)
+    public function setFacebookId($facebookId)
     {
-        $this->nbvote = $nbvote;
+        $this->facebookId = $facebookId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebookAccessToken()
+    {
+        return $this->facebookAccessToken;
+    }
+
+    /**
+     * @param mixed $facebookAccessToken
+     */
+    public function setFacebookAccessToken($facebookAccessToken)
+    {
+        $this->facebookAccessToken = $facebookAccessToken;
     }
 
 
@@ -216,4 +242,3 @@ class CoursCode
 
 
 }
-

@@ -44,16 +44,16 @@ class AcceptController extends Controller
         {
             $user = $this->container->get('security.token_storage')->getToken()->getUser();
 
-            $username = $user->getUsername();
+            //$username = $user->getUsername();
 
 
 
         }
         $em = $this->getDoctrine()->getManager();
-        $accept = $em->getRepository("DataBundle:Accept")->findAll();
+        $accept = $em->getRepository("DataBundle:Accept")->findBy(array('id_user'=>$user));
 
         return $this->render("WissemCondidatBundle:accept:gestDemandeUser.html.twig",
-            array('user'=>$username,"accept" => $accept)
+            array('accept' => $accept)
         );
 
 

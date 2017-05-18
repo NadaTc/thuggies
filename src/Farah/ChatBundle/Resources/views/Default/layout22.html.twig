@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="animate-bus">
-            <img src="{{ asset('images/animate-bus2.png') }}" alt="">
+            <img src="{{ asset('images/car3.png') }}" alt="">
         </div>
     </div>
 {% block chat %}
@@ -166,10 +166,10 @@
                     <div class="col-md-6">
 
                         <div class="cp-faq-holder">
-                            <h3>POSER UNE QUESTION?</h3>
+                            <h3>POSER UNE QUESTION</h3>
 
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="{{ path('farah_chat_ajoutA') }}" aria-controls="ask-tab1" role="tab" data-toggle="tab">Ajouter Discussion</a></li>
+                                <li class="active"><a href="{{ path('farah_chat_ajoutA') }}" aria-controls="ask-tab1" role="tab" data-toggle="tab">Nouvelle Discussion</a></li>
                                 <li><a href="#ask-tab2" aria-controls="" role="tab" data-toggle="tab">Rechercher Discussion</a></li>
                             </ul>
 
@@ -177,7 +177,7 @@
                                 <div role="tabpanel" class="tab-pane fade in active" id="ask-tab1">
 
                                     <div class="cp-ask-tab-inner">
-                                        <p>Trouvez la réponse à votre question en utilisant la discussion. Poser votre question:</p>
+                                        <p>Trouvez la réponse à votre question. Posez votre question:</p>
                                         {% block contentAjout %}
                                         <form method="get">
 
@@ -191,7 +191,7 @@
                                         <p>Trouvez la discussion  Tapez simplement une lettre de titre: </p>
                                         <form method="get">
                                             <input type="text" name="titre">
-                                            <a href="" class="cp-btn-style2">Rechecher Maintenant</a>
+                                            <a href="" class="cp-btn-style2">Rechechez Maintenant</a>
                                         </form>
                                     </div>
                                 </div>
@@ -235,6 +235,7 @@
                             </div>
                         </section>
                     </div>
+
                         <div class="cp-pagination-row">
                             <ul class="pagination">
                                 <li>
@@ -242,13 +243,13 @@
                                         Prev
                                     </a>
                                 </li>
-                                <li><a href="active">1</a></li>
+                                <li><a href="#">1</a></li>
                                 <li class=""><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
                                 <li><a href="#">4</a></li>
                                 <li>
                                     <a href="#" aria-label="Next">
-                                        Next
+                                        Suivant
                                     </a>
                                 </li>
                             </ul>
@@ -256,63 +257,80 @@
                     </div>
                         <div class="cp-faq-btn-holder pd-t80">
                             <strong>Vous-avez des problemes? Contactez-nous maintenant</strong>
-                            <a href="contact.html" class="cp-btn-style1">Contactez-nous</a>
+                            <a href="#" class="cp-btn-style1">Contactez-nous</a>
                         </div>
                     </div>
                 </div>
-            </div>
+</div>
+
+</div>
         </section>
     </div>
 
 
 
 
-    <footer class="cp_footer">
-        <section class="cp-ft-top-section pd-t80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="footer-about-box">
-                            <strong class="logo">
-                                <a href="index.html"><img src="{{ asset('images/cp-logo2.png') }}" alt=""></a>
-                            </strong>
-                           <ul class="cp-social-links">
-                                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa  fa-envelope"></i></a></li>
-                            </ul>
-                            <ul class="cp-logo-listed">
-                                <li><a href="#"><img src="{{ asset('images/company-logo1.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo2.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo3.jpg') }}" alt=""></a></li>
-                                <li><a href="#"><img src="{{ asset('images/company-logo4.jpg') }}" alt=""></a></li>
-                            </ul>
-                        </div>
+<footer class="cp_footer">
+
+
+
+
+    <section class="cp-ft-bottom-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+
+                    <div class="cp-ft-form-box">
+                        <h4>Déja inscrit? <a href="{{ path('fos_user_security_login') }}"> Se connecter maintenant !</a></h4>
+                        <form action="{{ path("fos_user_security_check") }}" method="post">
+                            <div class="inner-holder">
+                                <input type="text" placeholder="Nom d'utilisateur"  required="required">
+                            </div>
+                            <div class="inner-holder">
+
+
+                                <input type="password" placeholder="Mot de passe"
+                                       id="password" name="_password" required="required" />
+                            </div>
+                            <div class="inner-holder inner-holder2">
+                                <button type="submit" class="btn-submit" value="Submit">Se connecter</button>
+                            </div>
+                            <label> <input type="checkbox">   </label>
+                            <label><a href="{{ path('fos_user_resetting_request') }}" class="remember-pw" >Mot de passe oublié ?</a></label>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="col-md-7 col-sm-12">
 
-        <section class="cp-ft-bottom-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12">
+                    <nav class="cp-footer-nav">
+                        <ul>
+                            <li><a href="{{ path('nada_auto_ecole_Taxi') }}">Accueil</a></li>
+                            <li><a href="{{ path('nada_auto_ecole_CoursFront') }}">Cours</a></li>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <li><a href="  {{ path('nada_auto_ecole_ListFrontTest') }}"> Tests </a></li>
+                            {% else %}
+                                <li><a href=" {{ path('fos_user_security_login') }}"> Tests </a></li>
 
-                    </div>
-                    <div class="col-md-7 col-sm-12">
 
-                        <p> All Rights Reserved 2016 </p>
-                    </div>
+                            {% endif %}
+
+                            <li><a href="#">Voiture</a></li>
+                            <li ><a href="#" >Adresses utiles </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ path('nada_map_base2') }}">Recherche guidée</a></li>
+                                    <li><a href="{{ path('nada_map_maplibre') }}">Recherche libre</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p> All rights reserved THUGGIES__2017 </p>
                 </div>
             </div>
-        </section>
-    </footer>
+        </div>
+    </section>
+
+
+</footer>
 
 </div>
 {% endblock chat %}
